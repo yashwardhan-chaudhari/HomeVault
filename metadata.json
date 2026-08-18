@@ -1,0 +1,6 @@
+{
+  "name": "HomeVault",
+  "description": "Smart home inventory tracking with location pinning, AI auto-detection, media storage, and warranty alerts.",
+  "requestFramePermissions": ["camera", "geolocation"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
