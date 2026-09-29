@@ -13,9 +13,9 @@ This document maps all curriculum and engineering concepts to their concrete imp
   - `/src/concepts/asyncAwait.js`
   - `/src/components/jslab/AsyncAwaitSection.jsx`
   - `/src/services/api.js` (Lines 15-80)
-  - `/src/server/geminiService.js` (Lines 20-145)
+  - `/src/server/db.js`
 - **Description & Proof:**
-  - Used across all asynchronous API service communications, database query handlers, and Gemini vision processing pipelines.
+  - Used across all asynchronous API service communications, database query handlers, and data pipelines.
   - Implements sequential waterfalls vs parallel `Promise.all()` optimizations.
   - Robust exception handling via `try...catch...finally` blocks with automated fallbacks.
 
@@ -184,7 +184,7 @@ export function callbackToPromiseAdapter(asyncCallbackFn) {
   - `/server.js` (Lines 1-30)
   - `/src/concepts/envSecretsManagement.js`
 - **Description & Proof:**
-  - Server-side isolation of secrets (`GEMINI_API_KEY`, `JWT_SECRET`, `PORT`).
+  - Server-side isolation of secrets (`JWT_SECRET`, `PORT`).
   - Clean separation: No private API keys exposed to browser clients (`VITE_` prefix strictly for public non-sensitive config).
   - Lazy initialization and graceful degradation guards.
 

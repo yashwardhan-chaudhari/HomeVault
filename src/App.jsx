@@ -6,7 +6,6 @@ import { Sidebar } from './components/common/Sidebar.jsx';
 import { Toast } from './components/common/Toast.jsx';
 import { ItemFormModal } from './components/items/ItemFormModal.jsx';
 import { ItemDetailModal } from './components/items/ItemDetailModal.jsx';
-import { AutoDetectModal } from './components/autodetect/AutoDetectModal.jsx';
 import { ConfirmModal } from './components/common/ConfirmModal.jsx';
 
 // Pages
@@ -28,7 +27,6 @@ function MainApp() {
 
   // Modals
   const [isAddItemOpen, setIsAddItemOpen] = useState(false);
-  const [isAutoDetectOpen, setIsAutoDetectOpen] = useState(false);
   const [selectedDetailItem, setSelectedDetailItem] = useState(null);
   const [selectedEditItem, setSelectedEditItem] = useState(null);
   const [deleteConfirmItem, setDeleteConfirmItem] = useState(null);
@@ -163,7 +161,6 @@ function MainApp() {
             setSelectedEditItem(null);
             setIsAddItemOpen(true);
           }}
-          onOpenAutoDetect={() => setIsAutoDetectOpen(true)}
         />
 
         {/* Right Section */}
@@ -173,7 +170,6 @@ function MainApp() {
               setSelectedEditItem(null);
               setIsAddItemOpen(true);
             }}
-            onOpenAutoDetect={() => setIsAutoDetectOpen(true)}
             activeTab={activeTab}
             setActiveTab={setActiveTab}
             searchQuery={searchQuery}
@@ -192,7 +188,6 @@ function MainApp() {
                   setSelectedEditItem(null);
                   setIsAddItemOpen(true);
                 }}
-                onOpenAutoDetect={() => setIsAutoDetectOpen(true)}
                 setActiveTab={setActiveTab}
               />
             )}
@@ -218,17 +213,6 @@ function MainApp() {
                 onViewItem={(item) => setSelectedDetailItem(item)}
                 refreshTrigger={itemChangeCount}
               />
-            )}
-
-            {activeTab === 'autodetect' && (
-              <div className="p-12 text-center">
-                <button
-                  onClick={() => setIsAutoDetectOpen(true)}
-                  className="px-6 py-3 rounded-2xl bg-indigo-600 text-white font-black text-sm shadow-xl hover:bg-indigo-700"
-                >
-                  Launch AI Auto Detect Vision Scanner
-                </button>
-              </div>
             )}
 
             {activeTab === 'analytics' && <AnalyticsPage />}
@@ -263,14 +247,6 @@ function MainApp() {
         }}
         onDelete={handleDeleteItem}
         onToggleFavorite={handleToggleFavorite}
-      />
-
-      {/* AI Auto Detect Modal */}
-      <AutoDetectModal
-        isOpen={isAutoDetectOpen}
-        onClose={() => setIsAutoDetectOpen(false)}
-        onSaveToVault={handleSaveItem}
-        suggestions={suggestions}
       />
 
       {/* Delete Confirmation Modal */}

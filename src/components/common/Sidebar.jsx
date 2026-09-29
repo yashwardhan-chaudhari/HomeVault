@@ -1,20 +1,17 @@
 import React from 'react';
-import { LayoutDashboard, Package, MapPin, Sparkles, BarChart2, History, Bell, Settings, Plus, Code2 } from 'lucide-react';
+import { LayoutDashboard, Package, MapPin, BarChart2, History, Bell, Settings, Plus } from 'lucide-react';
 
 export const Sidebar = ({
   activeTab,
   setActiveTab,
-  onOpenAddItem,
-  onOpenAutoDetect
+  onOpenAddItem
 }) => {
   const navItems = [
     { id: 'dashboard', label: 'Dashboard', icon: LayoutDashboard },
     { id: 'inventory', label: 'Item Vault', icon: Package },
     { id: 'map', label: 'Location Map', icon: MapPin },
-    { id: 'autodetect', label: 'AI Auto Detect', icon: Sparkles, badge: 'AI' },
     { id: 'analytics', label: 'Analytics', icon: BarChart2 },
     { id: 'activity', label: 'Activity Logs', icon: History },
-    { id: 'jslab', label: 'JS Concepts', icon: Code2, badge: 'LAB' },
     { id: 'notifications', label: 'Alerts', icon: Bell },
     { id: 'settings', label: 'Settings', icon: Settings }
   ];

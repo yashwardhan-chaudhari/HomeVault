@@ -1,11 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Star, MapPin, Package, AlertCircle, Trash2, ExternalLink } from 'lucide-react';
 
 export const ItemCard = ({ item, onView, onToggleFavorite, onDelete }) => {
-  const [imageError, setImageError] = useState(false);
-  const [imageLoading, setImageLoading] = useState(true);
-  const [isDeleting, setIsDeleting] = useState(false);
-
   const priorityColors = {
     Critical: 'bg-rose-500 text-white border-rose-600',
     High: 'bg-orange-500 text-white border-orange-600',
@@ -41,17 +37,11 @@ export const ItemCard = ({ item, onView, onToggleFavorite, onDelete }) => {
     window.open(mapsUrl, '_blank', 'noopener,noreferrer');
   };
 
-  const handleDelete = async (e) => {
+  const handleDelete = (e) => {
     e.stopPropagation();
     e.preventDefault();
-    if (onDelete && !isDeleting) {
-      setIsDeleting(true);
-      try {
-        await onDelete(item, e);
-      } catch (error) {
-        console.error('Failed to delete item:', error);
-        setIsDeleting(false);
-      }
+    if (onDelete) {
+      onDelete(item, e);
     }
   };
 
@@ -69,28 +59,12 @@ export const ItemCard = ({ item, onView, onToggleFavorite, onDelete }) => {
       <div>
         {/* Thumbnail Box */}
         <div className="relative aspect-[4/3] w-full rounded-xl overflow-hidden bg-slate-100 dark:bg-slate-800 mb-3">
-          {thumbnail && !imageError ? (
-            <>
-              {imageLoading && (
-                <div className="absolute inset-0 flex items-center justify-center bg-slate-100 dark:bg-slate-800">
-                  <div className="animate-pulse text-slate-400 dark:text-slate-500">
-                    <Package className="w-8 h-8 opacity-50" />
-                  </div>
-                </div>
-              )}
-              <img
-                src={thumbnail}
-                alt={item.name}
-                onLoad={() => setImageLoading(false)}
-                onError={() => {
-                  setImageError(true);
-                  setImageLoading(false);
-                }}
-                className={`w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ${
-                  imageLoading ? 'opacity-0' : 'opacity-100'
-                }`}
-              />
-            </>
+          {thumbnail ? (
+            <img
+              src={thumbnail}
+              alt={item.name}
+              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+            />
           ) : (
             <div className="w-full h-full flex flex-col items-center justify-center text-slate-400 dark:text-slate-500">
               <Package className="w-8 h-8 mb-1 opacity-50" />
@@ -105,15 +79,10 @@ export const ItemCard = ({ item, onView, onToggleFavorite, onDelete }) => {
               <button
                 type="button"
                 onClick={handleDelete}
-                disabled={isDeleting}
-                className={`p-2 rounded-xl bg-white/90 dark:bg-slate-900/90 backdrop-blur-md shadow-sm hover:scale-110 active:scale-95 transition-all ${
-                  isDeleting
-                    ? 'text-slate-400 cursor-not-allowed'
-                    : 'text-rose-500 hover:bg-rose-500 hover:text-white'
-                }`}
-                title={isDeleting ? 'Deleting...' : 'Delete Item'}
+                className="p-2 rounded-xl bg-white/90 dark:bg-slate-900/90 backdrop-blur-md text-rose-500 shadow-sm hover:bg-rose-500 hover:text-white hover:scale-110 active:scale-95 transition-all"
+                title="Delete Item"
               >
-                <Trash2 className={`w-4 h-4 ${isDeleting ? 'animate-pulse' : ''}`} />
+                <Trash2 className="w-4 h-4" />
               </button>
             )}
 

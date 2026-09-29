@@ -1,13 +1,13 @@
+import 'dotenv/config';
 import express from 'express';
 import path from 'path';
 import jwt from 'jsonwebtoken';
 import bcrypt from 'bcryptjs';
 import { createServer as createViteServer } from 'vite';
 import { db } from './src/server/db.js';
-import { analyzeItemImage } from './src/server/geminiService.js';
 
 const JWT_SECRET = process.env.JWT_SECRET || 'homevault_secret_key_2026';
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 // Authentication middleware
 const authenticateToken = (req, res, next) => {
@@ -264,24 +264,6 @@ async function startServer() {
       res.json(suggestions);
     } catch (err) {
       res.status(500).json({ error: err.message });
-    }
-  });
-
-  // =====================================
-  // AI AUTO DETECT ENDPOINT
-  // =====================================
-
-  app.post('/api/autodetect', authenticateToken, async (req, res) => {
-    try {
-      const { imageBase64, mimeType } = req.body;
-      if (!imageBase64) {
-        return res.status(400).json({ error: 'Base64 image data is required' });
-      }
-
-      const result = await analyzeItemImage(imageBase64, mimeType || 'image/jpeg');
-      res.json(result);
-    } catch (err) {
-      res.status(500).json({ error: err.message || 'Auto detect failed' });
     }
   });
 

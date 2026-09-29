@@ -16,8 +16,7 @@ export function getSafeEnvironmentConfig() {
     // Client-side environment check (only VITE_ prefixed non-sensitive variables)
     return {
       runtime: 'client-browser',
-      isProduction: import.meta.env?.PROD || false,
-      hasGeminiApiKeyInClient: false // Strictly false: Protected on server!
+      isProduction: import.meta.env?.PROD || false
     };
   }
 
@@ -25,7 +24,6 @@ export function getSafeEnvironmentConfig() {
   return {
     runtime: 'node-server',
     port: process.env.PORT || 3000,
-    hasGeminiKey: Boolean(process.env.GEMINI_API_KEY),
     hasJwtSecret: Boolean(process.env.JWT_SECRET),
     nodeEnv: process.env.NODE_ENV || 'development'
   };

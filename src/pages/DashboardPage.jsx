@@ -1,5 +1,5 @@
 import React from 'react';
-import { Package, Star, DollarSign, Sparkles, ShieldAlert, Clock, ArrowRight, Vault } from 'lucide-react';
+import { Package, Star, DollarSign, ShieldAlert, Clock, ArrowRight, Vault, Plus } from 'lucide-react';
 import { ItemCard } from '../components/items/ItemCard.jsx';
 
 export const DashboardPage = ({
@@ -9,7 +9,6 @@ export const DashboardPage = ({
   onToggleFavorite,
   onDeleteItem,
   onOpenAddItem,
-  onOpenAutoDetect,
   setActiveTab
 }) => {
   return (
@@ -24,23 +23,23 @@ export const DashboardPage = ({
             Never Forget Where You Kept Anything.
           </h1>
           <p className="text-xs sm:text-sm text-indigo-100 leading-relaxed">
-            Locate items in exact drawers, cupboards, and rooms. Scan new belongings with AI auto-detection, track warranties, and view map pins.
+            Locate items in exact drawers, cupboards, and rooms. Catalog your belongings, track warranties, and view map pins.
           </p>
 
           <div className="flex flex-wrap items-center gap-3 pt-2">
             <button
-              onClick={onOpenAutoDetect}
+              onClick={onOpenAddItem}
               className="flex items-center gap-2 px-5 py-2.5 rounded-xl bg-white text-indigo-700 font-extrabold text-xs shadow-md hover:bg-indigo-50 active:scale-95 transition-all"
             >
-              <Sparkles className="w-4 h-4 text-indigo-600 fill-indigo-600" />
-              Scan with AI Auto Detect
+              <Plus className="w-4 h-4 stroke-[3]" />
+              Store New Item
             </button>
             <button
-              onClick={onOpenAddItem}
+              onClick={() => setActiveTab('inventory')}
               className="flex items-center gap-2 px-5 py-2.5 rounded-xl bg-indigo-700/80 hover:bg-indigo-700 text-white font-bold text-xs border border-indigo-500/30 transition-all"
             >
               <Package className="w-4 h-4" />
-              Add Item Manually
+              Browse Item Vault
             </button>
           </div>
         </div>

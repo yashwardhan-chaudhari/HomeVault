@@ -1,0 +1,161 @@
+{
+  "users": [
+    {
+      "id": "user_demo_001",
+      "email": "alex@homevault.io",
+      "fullName": "Alex Vance",
+      "avatarUrl": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80",
+      "role": "user",
+      "themePreference": "light",
+      "notificationPrefs": {
+        "email": true,
+        "warranty": true,
+        "expiry": true,
+        "weeklyDigest": true
+      },
+      "createdAt": "2026-09-29T05:15:13.297Z",
+      "updatedAt": "2026-09-29T05:15:13.298Z",
+      "passwordHash": "$2b$10$3REfosyQ0xd2QSZccVl9zO4oEjjDHt4QL.BDYFu3B9ogpuH25lPqi"
+    },
+    {
+      "id": "user_demo_002",
+      "email": "demo@homevault.app",
+      "fullName": "Demo Member",
+      "avatarUrl": "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=150&auto=format&fit=crop&q=80",
+      "role": "user",
+      "themePreference": "light",
+      "notificationPrefs": {
+        "email": true,
+        "warranty": true,
+        "expiry": true,
+        "weeklyDigest": true
+      },
+      "createdAt": "2026-09-29T05:15:13.298Z",
+      "updatedAt": "2026-09-29T05:15:13.298Z",
+      "passwordHash": "$2b$10$3REfosyQ0xd2QSZccVl9zO4oEjjDHt4QL.BDYFu3B9ogpuH25lPqi"
+    },
+    {
+      "id": "user_1790663113885",
+      "email": "testuser_1790663113601@homevault.app",
+      "fullName": "Updated Integration User",
+      "passwordHash": "$2b$10$savcFSXSv8qgamYac7zlfeoWffs9.nleuDziRvuNm/lohU9Uj9LR2",
+      "role": "user",
+      "themePreference": "dark",
+      "createdAt": "2026-09-29T06:25:13.885Z",
+      "updatedAt": "2026-09-29T06:25:14.182Z",
+      "avatarUrl": "https://example.com/avatar.jpg"
+    }
+  ],
+  "items": [],
+  "activityLogs": [
+    {
+      "id": "log_1790663115034_qgg",
+      "userId": "user_1790663113885",
+      "itemId": "item_1790663114214_qy0",
+      "itemName": "Bosch Professional Drill Kit",
+      "action": "Deleted",
+      "details": "Removed item from vault",
+      "timestamp": "2026-09-29T06:25:15.034Z"
+    },
+    {
+      "id": "log_1790663115029_q1a",
+      "userId": "user_1790663113885",
+      "itemId": "item_1790663114203_d5q",
+      "itemName": "Apple MacBook Pro M3",
+      "action": "Deleted",
+      "details": "Removed item from vault",
+      "timestamp": "2026-09-29T06:25:15.029Z"
+    },
+    {
+      "id": "log_1790663114470_j7p",
+      "userId": "user_1790663113885",
+      "itemId": "item_1790663114203_d5q",
+      "itemName": "Apple MacBook Pro M3",
+      "action": "Updated",
+      "details": "Updated item details and location",
+      "timestamp": "2026-09-29T06:25:14.470Z"
+    },
+    {
+      "id": "log_1790663114214_3yh",
+      "userId": "user_1790663113885",
+      "itemId": "item_1790663114214_qy0",
+      "itemName": "Bosch Professional Drill Kit",
+      "action": "Created",
+      "details": "Added item to Garage",
+      "timestamp": "2026-09-29T06:25:14.214Z"
+    },
+    {
+      "id": "log_1790663114203_mdk",
+      "userId": "user_1790663113885",
+      "itemId": "item_1790663114203_d5q",
+      "itemName": "Apple MacBook Pro M3",
+      "action": "Created",
+      "details": "Added item to Study Room",
+      "timestamp": "2026-09-29T06:25:14.203Z"
+    },
+    {
+      "id": "log_1790662708746_iz8",
+      "userId": "user_demo_001",
+      "itemId": "item_1790662708625_i09",
+      "itemName": "Sony WH-1000XM5 Wireless Headphones",
+      "action": "Deleted",
+      "details": "Removed item from vault",
+      "timestamp": "2026-09-29T06:18:28.746Z"
+    },
+    {
+      "id": "log_1790662708652_3fl",
+      "userId": "user_demo_001",
+      "itemId": "item_1790662708625_i09",
+      "itemName": "Sony WH-1000XM5 Wireless Headphones",
+      "action": "Updated",
+      "details": "Updated item details and location",
+      "timestamp": "2026-09-29T06:18:28.652Z"
+    },
+    {
+      "id": "log_1790662708625_za1",
+      "userId": "user_demo_001",
+      "itemId": "item_1790662708625_i09",
+      "itemName": "Sony WH-1000XM5 Wireless Headphones",
+      "action": "Created",
+      "details": "Added item to Living Room",
+      "timestamp": "2026-09-29T06:18:28.625Z"
+    },
+    {
+      "id": "log_1790662031961_b75",
+      "userId": "user_demo_001",
+      "itemId": "item_1790662021453_7in",
+      "itemName": "Ergonomic Desk Chair",
+      "action": "Deleted",
+      "details": "Removed item from vault",
+      "timestamp": "2026-09-29T06:07:11.961Z"
+    },
+    {
+      "id": "log_1790662021453_fj4",
+      "userId": "user_demo_001",
+      "itemId": "item_1790662021453_7in",
+      "itemName": "Ergonomic Desk Chair",
+      "action": "Created",
+      "details": "Added item to General Storage",
+      "timestamp": "2026-09-29T06:07:01.454Z"
+    },
+    {
+      "id": "log_1790659164060_xx0",
+      "userId": "user_demo_001",
+      "itemId": "item_1790659155845_6v8",
+      "itemName": "Test Smart Lamp",
+      "action": "Deleted",
+      "details": "Removed item from vault",
+      "timestamp": "2026-09-29T05:19:24.060Z"
+    },
+    {
+      "id": "log_1790659155845_wqk",
+      "userId": "user_demo_001",
+      "itemId": "item_1790659155845_6v8",
+      "itemName": "Test Smart Lamp",
+      "action": "Created",
+      "details": "Added item to General Storage",
+      "timestamp": "2026-09-29T05:19:15.845Z"
+    }
+  ],
+  "notifications": []
+}

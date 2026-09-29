@@ -64,15 +64,10 @@ export const api = {
   // Autocomplete Suggestions
   getSuggestions: () => request('/api/suggestions'),
 
-  // AI Auto Detect
-  autoDetect: (imageBase64, mimeType) => request('/api/autodetect', {
-    method: 'POST',
-    body: JSON.stringify({ imageBase64, mimeType })
-  }),
-
   // Dashboard & Analytics
   getDashboardStats: () => request('/api/dashboard/stats'),
   getAnalytics: () => request('/api/analytics'),
+  runAggregation: (pipeline) => request('/api/analytics/aggregate', { method: 'POST', body: JSON.stringify({ pipeline }) }),
   getActivityLogs: () => request('/api/activity-logs'),
   getNotifications: () => request('/api/notifications'),
   markNotificationRead: (id) => request(`/api/notifications/${id}/read`, { method: 'PATCH' }),

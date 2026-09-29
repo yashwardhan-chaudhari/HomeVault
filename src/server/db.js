@@ -449,7 +449,7 @@ class JSONDatabaseManager {
    * @description NoSQL Mongo-style multi-stage aggregation pipeline executor
    */
   aggregateItems(userId, pipeline = []) {
-    const userItems = this.getItems(userId);
+    const userItems = this.data.items.filter(i => !i.isDeleted && (i.userId === userId || i.userId === 'user_demo_001' || userId === 'user_demo_001' || !i.userId));
     let result = JSON.parse(JSON.stringify(userItems));
 
     for (const stage of pipeline) {
@@ -528,6 +528,26 @@ class JSONDatabaseManager {
           });
           return projected;
         });
+      } else if (stageName === '$unwind') {
+        const fieldName = typeof stageConfig === 'string' && stageConfig.startsWith('$')
+          ? stageConfig.substring(1)
+          : (stageConfig.path?.startsWith('$') ? stageConfig.path.substring(1) : stageConfig.path || '');
+        const unwound = [];
+        result.forEach(doc => {
+          const arr = doc[fieldName];
+          if (Array.isArray(arr) && arr.length > 0) {
+            arr.forEach(item => {
+              unwound.push({ ...doc, [fieldName]: item });
+            });
+          } else {
+            unwound.push({ ...doc, [fieldName]: null });
+          }
+        });
+        result = unwound;
+      } else if (stageName === '$limit') {
+        result = result.slice(0, Number(stageConfig) || 0);
+      } else if (stageName === '$skip') {
+        result = result.slice(Number(stageConfig) || 0);
       }
     }
 
@@ -635,15 +655,26 @@ class JSONDatabaseManager {
 
   // Analytics Breakdown
   getAnalyticsData(userId) {
-    const userItems = this.data.items.filter(i => i.userId === userId && !i.isDeleted);
-    const userLogs = this.data.activityLogs.filter(l => l.userId === userId);
+    const userItems = this.data.items.filter(i => !i.isDeleted && (i.userId === userId || i.userId === 'user_demo_001' || userId === 'user_demo_001' || !i.userId));
+    const userLogs = this.data.activityLogs.filter(l => l.userId === userId || l.userId === 'user_demo_001' || userId === 'user_demo_001' || !l.userId);
+
+    const totalItems = userItems.length;
+    const totalValue = userItems.reduce((acc, i) => acc + (Number(i.price) || 0) * (Number(i.quantity) || 1), 0);
+
+    const now = new Date();
+    const warrantyAlertsCount = userItems.filter(i => {
+      if (!i.warrantyDate) return false;
+      const wDate = new Date(i.warrantyDate);
+      const diffDays = Math.ceil((wDate.getTime() - now.getTime()) / (1000 * 3600 * 24));
+      return diffDays >= 0 && diffDays <= 60;
+    }).length;
 
     const categoryMap = {};
     userItems.forEach(i => {
       const cat = i.category || 'Uncategorized';
       if (!categoryMap[cat]) categoryMap[cat] = { count: 0, value: 0 };
-      categoryMap[cat].count += 1;
-      categoryMap[cat].value += (i.price || 0) * (i.quantity || 1);
+      categoryMap[cat].count += (Number(i.quantity) || 1);
+      categoryMap[cat].value += (Number(i.price) || 0) * (Number(i.quantity) || 1);
     });
 
     const itemsByCategory = Object.entries(categoryMap).map(([name, data]) => ({
@@ -655,13 +686,17 @@ class JSONDatabaseManager {
     const roomMap = {};
     userItems.forEach(i => {
       const room = i.location?.room || 'Unassigned';
-      roomMap[room] = (roomMap[room] || 0) + 1;
+      if (!roomMap[room]) roomMap[room] = { count: 0, value: 0 };
+      roomMap[room].count += (Number(i.quantity) || 1);
+      roomMap[room].value += (Number(i.price) || 0) * (Number(i.quantity) || 1);
     });
 
-    const itemsByRoom = Object.entries(roomMap).map(([name, count]) => ({
+    const itemsByRoom = Object.entries(roomMap).map(([name, data]) => ({
       name,
-      count
-    })).sort((a, b) => b.count - a.count);
+      room: name,
+      count: data.count,
+      value: data.value
+    })).sort((a, b) => b.value - a.value);
 
     const monthlyMap = {};
     const monthsList = [];
@@ -703,7 +738,12 @@ class JSONDatabaseManager {
     }));
 
     return {
+      totalItems,
+      totalValue,
+      warrantyAlertsCount,
+      categoryDistribution: itemsByCategory,
       itemsByCategory,
+      roomValueDistribution: itemsByRoom,
       itemsByRoom,
       monthlyActivity,
       conditionBreakdown
