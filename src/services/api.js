@@ -43,6 +43,7 @@ export const api = {
   updateProfile: (data) => request('/api/auth/profile', { method: 'PUT', body: JSON.stringify(data) }),
   updatePassword: (data) => request('/api/auth/password', { method: 'PUT', body: JSON.stringify(data) }),
   forgotPassword: (email) => request('/api/auth/forgot-password', { method: 'POST', body: JSON.stringify({ email }) }),
+  resetPassword: (data) => request('/api/auth/reset-password', { method: 'POST', body: JSON.stringify(data) }),
   deleteAccount: () => request('/api/auth/delete-account', { method: 'DELETE' }),
 
   // Items
@@ -61,8 +62,10 @@ export const api = {
   deleteItem: (id) => request(`/api/items/${id}`, { method: 'DELETE' }),
   toggleFavorite: (id) => request(`/api/items/${id}/favorite`, { method: 'PATCH' }),
 
-  // Autocomplete Suggestions
+  // Autocomplete Suggestions & Locations
   getSuggestions: () => request('/api/suggestions'),
+  getLocations: () => request('/api/locations'),
+  getHealth: () => request('/api/health'),
 
   // Dashboard & Analytics
   getDashboardStats: () => request('/api/dashboard/stats'),

@@ -15,7 +15,7 @@
       },
       "createdAt": "2026-09-29T05:15:13.297Z",
       "updatedAt": "2026-09-29T05:15:13.298Z",
-      "passwordHash": "$2b$10$3REfosyQ0xd2QSZccVl9zO4oEjjDHt4QL.BDYFu3B9ogpuH25lPqi"
+      "passwordHash": "$2b$10$J1Wd5Q6BlRcX2eDfXNDop.PabwZ6akW.jYsceNlupx48e5v6ycO2a"
     },
     {
       "id": "user_demo_002",
@@ -32,7 +32,7 @@
       },
       "createdAt": "2026-09-29T05:15:13.298Z",
       "updatedAt": "2026-09-29T05:15:13.298Z",
-      "passwordHash": "$2b$10$3REfosyQ0xd2QSZccVl9zO4oEjjDHt4QL.BDYFu3B9ogpuH25lPqi"
+      "passwordHash": "$2b$10$J1Wd5Q6BlRcX2eDfXNDop.PabwZ6akW.jYsceNlupx48e5v6ycO2a"
     },
     {
       "id": "user_1790663113885",
@@ -46,7 +46,440 @@
       "avatarUrl": "https://example.com/avatar.jpg"
     }
   ],
-  "items": [],
+  "items": [
+    {
+      "id": "item_1792645299678_3d6vr",
+      "userId": "user_demo_001",
+      "description": "",
+      "brand": "Apple",
+      "tags": [
+        "Work",
+        "Laptop",
+        "Apple",
+        "High Value"
+      ],
+      "price": 249900,
+      "purchaseDate": "2025-06-10",
+      "warrantyDate": "2027-10-22",
+      "quantity": 1,
+      "condition": "New",
+      "priority": "Urgent",
+      "serialNumber": "C02G876XMD6T",
+      "notes": "Contains confidential development environment and local vault keys",
+      "isFavorite": true,
+      "isDeleted": false,
+      "location": {
+        "house": "Main Residence",
+        "floor": "2nd Floor",
+        "room": "Study Room",
+        "cupboard": "Executive Desk",
+        "shelf": "",
+        "drawer": "Top Drawer (Locked)",
+        "container": "Leather Sleeve",
+        "exactPosition": "Left Compartment"
+      },
+      "images": [
+        "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=800&auto=format&fit=crop&q=80"
+      ],
+      "videos": [],
+      "documents": [],
+      "viewedCount": 1,
+      "lastViewedAt": "2026-10-22T05:01:39.678Z",
+      "createdAt": "2026-10-22T05:01:39.678Z",
+      "updatedAt": "2026-10-22T05:01:39.678Z",
+      "name": "Apple MacBook Pro 16\" M3 Max",
+      "category": "Electronics",
+      "subcategory": "Computers"
+    },
+    {
+      "id": "item_1792645299678_n98pk",
+      "userId": "user_demo_001",
+      "description": "",
+      "brand": "Sony",
+      "tags": [
+        "Audio",
+        "Travel",
+        "Noise Cancelling"
+      ],
+      "price": 29990,
+      "purchaseDate": "2024-11-05",
+      "warrantyDate": "2026-11-11",
+      "quantity": 1,
+      "condition": "Like New",
+      "priority": "High",
+      "serialNumber": "S01-9872134-B",
+      "notes": "Warranty expiring soon - check ear cushions replacement program",
+      "isFavorite": true,
+      "isDeleted": false,
+      "location": {
+        "house": "Main Residence",
+        "floor": "2nd Floor",
+        "room": "Master Bedroom",
+        "cupboard": "Nightstand",
+        "shelf": "",
+        "drawer": "Top Drawer",
+        "container": "Original Hard Case",
+        "exactPosition": "Center"
+      },
+      "images": [
+        "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=800&auto=format&fit=crop&q=80"
+      ],
+      "videos": [],
+      "documents": [],
+      "viewedCount": 1,
+      "lastViewedAt": "2026-10-22T05:01:39.678Z",
+      "createdAt": "2026-10-22T05:01:39.678Z",
+      "updatedAt": "2026-10-22T05:01:39.678Z",
+      "name": "Sony WH-1000XM5 Wireless Headphones",
+      "category": "Electronics",
+      "subcategory": "Audio"
+    },
+    {
+      "id": "item_1792645299678_an5hn",
+      "userId": "user_demo_001",
+      "description": "",
+      "brand": "Bosch",
+      "tags": [
+        "Hardware",
+        "Workshop",
+        "Power Tools"
+      ],
+      "price": 14500,
+      "purchaseDate": "2023-08-14",
+      "warrantyDate": "2026-09-07",
+      "quantity": 1,
+      "condition": "Good",
+      "priority": "Medium",
+      "serialNumber": "BSH-882910-K",
+      "notes": "Includes 2x 18V Li-ion batteries and fast charger",
+      "isFavorite": false,
+      "isDeleted": false,
+      "location": {
+        "house": "Main Residence",
+        "floor": "Ground Floor",
+        "room": "Garage",
+        "cupboard": "Heavy Duty Tool Cabinet",
+        "shelf": "Shelf 3",
+        "drawer": "",
+        "container": "Bosch L-BOXX Case",
+        "exactPosition": "Left Side"
+      },
+      "images": [
+        "https://images.unsplash.com/photo-1504148455328-c376907d081c?w=800&auto=format&fit=crop&q=80"
+      ],
+      "videos": [],
+      "documents": [],
+      "viewedCount": 1,
+      "lastViewedAt": "2026-10-22T05:01:39.678Z",
+      "createdAt": "2026-10-22T05:01:39.678Z",
+      "updatedAt": "2026-10-22T05:01:39.678Z",
+      "name": "Bosch Professional Cordless Hammer Drill Kit",
+      "category": "Tools",
+      "subcategory": "Power Tools"
+    },
+    {
+      "id": "item_1792645299678_u7g67",
+      "userId": "user_demo_001",
+      "description": "",
+      "brand": "Dyson",
+      "tags": [
+        "Home Care",
+        "Cleaning",
+        "Appliances"
+      ],
+      "price": 65900,
+      "purchaseDate": "2025-02-18",
+      "warrantyDate": "2027-10-22",
+      "quantity": 1,
+      "condition": "Like New",
+      "priority": "High",
+      "serialNumber": "DY-V15-99214A",
+      "notes": "Mounted on wall dock. Extra filters stored in cupboard.",
+      "isFavorite": false,
+      "isDeleted": false,
+      "location": {
+        "house": "Main Residence",
+        "floor": "Ground Floor",
+        "room": "Utility Room",
+        "cupboard": "Cleaning Closet",
+        "shelf": "Wall Mount",
+        "drawer": "",
+        "container": "",
+        "exactPosition": "Charging Station"
+      },
+      "images": [
+        "https://images.unsplash.com/photo-1558317374-067fb5f30001?w=800&auto=format&fit=crop&q=80"
+      ],
+      "videos": [],
+      "documents": [],
+      "viewedCount": 1,
+      "lastViewedAt": "2026-10-22T05:01:39.678Z",
+      "createdAt": "2026-10-22T05:01:39.678Z",
+      "updatedAt": "2026-10-22T05:01:39.678Z",
+      "name": "Dyson V15 Detect Absolute Vacuum Cleaner",
+      "category": "Appliances",
+      "subcategory": "Cleaning"
+    },
+    {
+      "id": "item_1792645299678_ogkyt",
+      "userId": "user_demo_001",
+      "description": "",
+      "brand": "Samsonite",
+      "tags": [
+        "Travel",
+        "Bags",
+        "Luggage"
+      ],
+      "price": 38500,
+      "purchaseDate": "2024-04-12",
+      "warrantyDate": "2027-10-22",
+      "quantity": 1,
+      "condition": "Good",
+      "priority": "Medium",
+      "serialNumber": "SAM-PROX-75-SILV",
+      "notes": "TSA lock combination code set to 418. Luggage tag attached.",
+      "isFavorite": true,
+      "isDeleted": false,
+      "location": {
+        "house": "Main Residence",
+        "floor": "Attic",
+        "room": "Storage Room",
+        "cupboard": "Luggage Rack",
+        "shelf": "Top Rack",
+        "drawer": "",
+        "container": "Dust Cover",
+        "exactPosition": "Section B"
+      },
+      "images": [
+        "https://images.unsplash.com/photo-1565026057447-bc90a3dceb87?w=800&auto=format&fit=crop&q=80"
+      ],
+      "videos": [],
+      "documents": [],
+      "viewedCount": 1,
+      "lastViewedAt": "2026-10-22T05:01:39.678Z",
+      "createdAt": "2026-10-22T05:01:39.678Z",
+      "updatedAt": "2026-10-22T05:01:39.678Z",
+      "name": "Samsonite Proxis Hardside Spinner Suitcase 75cm",
+      "category": "Travel",
+      "subcategory": "Luggage"
+    },
+    {
+      "id": "item_1792645299678_4wu0j",
+      "userId": "user_demo_001",
+      "description": "",
+      "brand": "Herman Miller",
+      "tags": [
+        "Ergonomics",
+        "Office",
+        "Furniture"
+      ],
+      "price": 125000,
+      "purchaseDate": "2024-01-20",
+      "warrantyDate": "2027-10-22",
+      "quantity": 1,
+      "condition": "Like New",
+      "priority": "Medium",
+      "serialNumber": "HM-AERON-SIZE-B-2024",
+      "notes": "12-year manufacturer warranty. Forward tilt and lumbar support enabled.",
+      "isFavorite": false,
+      "isDeleted": false,
+      "location": {
+        "house": "Main Residence",
+        "floor": "2nd Floor",
+        "room": "Study Room",
+        "cupboard": "",
+        "shelf": "",
+        "drawer": "",
+        "container": "",
+        "exactPosition": "Primary Desk Position"
+      },
+      "images": [
+        "https://images.unsplash.com/photo-1580481077195-c22ae2499d25?w=800&auto=format&fit=crop&q=80"
+      ],
+      "videos": [],
+      "documents": [],
+      "viewedCount": 1,
+      "lastViewedAt": "2026-10-22T05:01:39.678Z",
+      "createdAt": "2026-10-22T05:01:39.678Z",
+      "updatedAt": "2026-10-22T05:01:39.678Z",
+      "name": "Herman Miller Aeron Ergonomic Office Chair",
+      "category": "Furniture",
+      "subcategory": "Chairs"
+    },
+    {
+      "id": "item_1792645299678_ei6pv",
+      "userId": "user_demo_001",
+      "description": "",
+      "brand": "Canon",
+      "tags": [
+        "Photography",
+        "Camera",
+        "Creative"
+      ],
+      "price": 215000,
+      "purchaseDate": "2024-09-15",
+      "warrantyDate": "2027-10-22",
+      "quantity": 1,
+      "condition": "New",
+      "priority": "Urgent",
+      "serialNumber": "CN-R6M2-88129",
+      "notes": "Stored with silica gel packets in moisture-controlled dry cabinet",
+      "isFavorite": true,
+      "isDeleted": false,
+      "location": {
+        "house": "Main Residence",
+        "floor": "1st Floor",
+        "room": "Living Room",
+        "cupboard": "Display Cabinet",
+        "shelf": "Middle Shelf",
+        "drawer": "",
+        "container": "Padded Pelican Case",
+        "exactPosition": "Right Compartment"
+      },
+      "images": [
+        "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=800&auto=format&fit=crop&q=80"
+      ],
+      "videos": [],
+      "documents": [],
+      "viewedCount": 1,
+      "lastViewedAt": "2026-10-22T05:01:39.678Z",
+      "createdAt": "2026-10-22T05:01:39.678Z",
+      "updatedAt": "2026-10-22T05:01:39.678Z",
+      "name": "Canon EOS R6 Mark II Mirrorless Camera",
+      "category": "Photography",
+      "subcategory": "Cameras"
+    },
+    {
+      "id": "item_1792645299678_mlvs9",
+      "userId": "user_demo_001",
+      "description": "",
+      "brand": "Official",
+      "tags": [
+        "Legal",
+        "Passports",
+        "High Security",
+        "Documents"
+      ],
+      "price": 0,
+      "purchaseDate": "2024-01-01",
+      "warrantyDate": "2027-10-22",
+      "quantity": 4,
+      "condition": "New",
+      "priority": "Urgent",
+      "serialNumber": "DOC-SET-2026-VAULT",
+      "notes": "Passports for Alex, Sarah, and vehicle registration papers",
+      "isFavorite": true,
+      "isDeleted": false,
+      "location": {
+        "house": "Main Residence",
+        "floor": "2nd Floor",
+        "room": "Study Room",
+        "cupboard": "Fireproof Safe",
+        "shelf": "Upper Tray",
+        "drawer": "",
+        "container": "Waterproof Document Wallet",
+        "exactPosition": "Front Section"
+      },
+      "images": [
+        "https://images.unsplash.com/photo-1544717305-2782549b5136?w=800&auto=format&fit=crop&q=80"
+      ],
+      "videos": [],
+      "documents": [],
+      "viewedCount": 1,
+      "lastViewedAt": "2026-10-22T05:01:39.678Z",
+      "createdAt": "2026-10-22T05:01:39.678Z",
+      "updatedAt": "2026-10-22T05:01:39.678Z",
+      "name": "Family Passports & Vehicle Title Documents",
+      "category": "Documents",
+      "subcategory": "Identification"
+    },
+    {
+      "id": "item_1792645299678_iob1z",
+      "userId": "user_demo_002",
+      "description": "",
+      "brand": "Apple",
+      "tags": [
+        "Tablet",
+        "Portable",
+        "Apple"
+      ],
+      "price": 112000,
+      "purchaseDate": "2025-01-10",
+      "warrantyDate": "2027-10-22",
+      "quantity": 1,
+      "condition": "New",
+      "priority": "High",
+      "serialNumber": "AP-IPAD-PRO-M2-89",
+      "notes": "",
+      "isFavorite": true,
+      "isDeleted": false,
+      "location": {
+        "house": "Townhouse",
+        "floor": "1st Floor",
+        "room": "Living Room",
+        "cupboard": "Bookshelf",
+        "shelf": "Shelf 2",
+        "drawer": "",
+        "container": "Felt Sleeve",
+        "exactPosition": "Beside Sofa"
+      },
+      "images": [
+        "https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?w=800&auto=format&fit=crop&q=80"
+      ],
+      "videos": [],
+      "documents": [],
+      "viewedCount": 1,
+      "lastViewedAt": "2026-10-22T05:01:39.678Z",
+      "createdAt": "2026-10-22T05:01:39.678Z",
+      "updatedAt": "2026-10-22T05:01:39.678Z",
+      "name": "iPad Pro 12.9\" M2 with Magic Keyboard",
+      "category": "Electronics",
+      "subcategory": "Tablets"
+    },
+    {
+      "id": "item_1792645299678_npa4z",
+      "userId": "user_demo_002",
+      "description": "",
+      "brand": "DeLonghi",
+      "tags": [
+        "Kitchen",
+        "Coffee",
+        "Appliances"
+      ],
+      "price": 48000,
+      "purchaseDate": "2024-07-22",
+      "warrantyDate": "2026-11-11",
+      "quantity": 1,
+      "condition": "Good",
+      "priority": "Medium",
+      "serialNumber": "DL-MAG-S-4412",
+      "notes": "",
+      "isFavorite": true,
+      "isDeleted": false,
+      "location": {
+        "house": "Townhouse",
+        "floor": "Ground Floor",
+        "room": "Kitchen",
+        "cupboard": "Coffee Station Counter",
+        "shelf": "",
+        "drawer": "",
+        "container": "",
+        "exactPosition": "Next to Refrigerator"
+      },
+      "images": [
+        "https://images.unsplash.com/photo-1517668808822-9ebb02ae2a0e?w=800&auto=format&fit=crop&q=80"
+      ],
+      "videos": [],
+      "documents": [],
+      "viewedCount": 1,
+      "lastViewedAt": "2026-10-22T05:01:39.678Z",
+      "createdAt": "2026-10-22T05:01:39.678Z",
+      "updatedAt": "2026-10-22T05:01:39.678Z",
+      "name": "DeLonghi Magnifica S Espresso Machine",
+      "category": "Appliances",
+      "subcategory": "Kitchen"
+    }
+  ],
   "activityLogs": [
     {
       "id": "log_1790663115034_qgg",
@@ -157,5 +590,6 @@
       "timestamp": "2026-09-29T05:19:15.845Z"
     }
   ],
-  "notifications": []
+  "notifications": [],
+  "passwordResetTokens": []
 }

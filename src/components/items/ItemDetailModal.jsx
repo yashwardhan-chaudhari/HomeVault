@@ -28,11 +28,15 @@ export const ItemDetailModal = ({
   const handleCopyLocation = () => {
     const parts = [
       item.location?.house,
+      item.location?.floor,
       item.location?.room,
+      item.location?.cupboard,
+      item.location?.shelf,
       item.location?.drawer,
-      item.location?.container
+      item.location?.container,
+      item.location?.exactPosition
     ].filter(Boolean);
-    const locStr = parts.join(' > ');
+    const locStr = parts.join(' → ');
     navigator.clipboard.writeText(locStr);
     setCopiedLocation(true);
     setTimeout(() => setCopiedLocation(false), 2000);
@@ -195,10 +199,13 @@ export const ItemDetailModal = ({
                 <p className="text-xs font-bold text-slate-900 dark:text-slate-100 leading-snug">
                   {[
                     item.location?.house || 'Home',
+                    item.location?.floor,
                     item.location?.room || 'Room',
+                    item.location?.cupboard,
+                    item.location?.shelf,
                     item.location?.drawer,
                     item.location?.container
-                  ].filter(Boolean).join(' › ')}
+                  ].filter(Boolean).join(' → ')}
                 </p>
                 {item.location?.exactPosition && (
                   <p className="text-[11px] text-slate-600 dark:text-slate-400 italic">
@@ -251,10 +258,10 @@ export const ItemDetailModal = ({
               Pinned GPS Map Location
             </h3>
             <LocationPickerMap
-              lat={item.location.lat}
-              lng={item.location.lng}
+              lat={item.location?.lat ?? item.location?.latitude}
+              lng={item.location?.lng ?? item.location?.longitude}
               readOnly={true}
-              popupText={`${item.name} (${item.location.room})`}
+              popupText={`${item.name} (${item.location?.room || 'Storage'})`}
             />
           </div>
 

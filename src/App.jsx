@@ -92,8 +92,13 @@ function MainApp() {
         await api.updateItem(selectedEditItem.id, itemData);
         addToast('success', 'Item Updated', `"${itemData.name}" saved to vault.`);
       } else {
-        await api.createItem(itemData);
+        const res = await api.createItem(itemData);
         addToast('success', 'Item Stored', `"${itemData.name}" saved to vault.`);
+        if (res && res.warning) {
+          setTimeout(() => {
+            addToast('warning', 'Potential Duplicate', res.warning);
+          }, 600);
+        }
       }
       setSelectedEditItem(null);
       refreshData();

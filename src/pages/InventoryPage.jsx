@@ -29,14 +29,17 @@ export const InventoryPage = ({
   const [condition, setCondition] = useState('');
   const [priority, setPriority] = useState('');
   const [isFavorite, setIsFavorite] = useState(false);
+  const [warrantyStatus, setWarrantyStatus] = useState('');
   const [sortBy, setSortBy] = useState('createdAt');
   const [sortOrder, setSortOrder] = useState('desc');
   const [page, setPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
   const [totalCount, setTotalCount] = useState(0);
+  const [fetchError, setFetchError] = useState(null);
 
   const fetchItems = async () => {
     setLoading(true);
+    setFetchError(null);
     try {
       const res = await api.getItems({
         search: searchQuery,
@@ -48,6 +51,7 @@ export const InventoryPage = ({
         condition,
         priority,
         isFavorite,
+        warrantyStatus,
         sortBy,
         sortOrder,
         page,
@@ -59,6 +63,7 @@ export const InventoryPage = ({
       setTotalCount(res.pagination?.total || 0);
     } catch (err) {
       console.error('Failed to load items:', err);
+      setFetchError(err.message || 'Failed to connect to vault API');
     } finally {
       setLoading(false);
     }
@@ -66,7 +71,7 @@ export const InventoryPage = ({
 
   useEffect(() => {
     fetchItems();
-  }, [searchQuery, category, subcategory, brand, room, house, condition, priority, isFavorite, sortBy, sortOrder, page, refreshTrigger]);
+  }, [searchQuery, category, subcategory, brand, room, house, condition, priority, isFavorite, warrantyStatus, sortBy, sortOrder, page, refreshTrigger]);
 
   const handleDelete = (item, e) => {
     if (e) e.stopPropagation();
@@ -85,15 +90,28 @@ export const InventoryPage = ({
     setCondition('');
     setPriority('');
     setIsFavorite(false);
+    setWarrantyStatus('');
     setPage(1);
   };
 
   const hasActiveFilters = Boolean(
-    searchQuery || category || subcategory || brand || room || house || condition || priority || isFavorite
+    searchQuery || category || subcategory || brand || room || house || condition || priority || isFavorite || warrantyStatus
   );
 
   return (
     <div className="space-y-6 animate-in fade-in duration-300">
+      {fetchError && (
+        <div className="p-4 rounded-2xl bg-rose-50 dark:bg-rose-950/40 border border-rose-200 dark:border-rose-900 text-rose-700 dark:text-rose-300 text-xs flex items-center justify-between">
+          <span>Failed to load items: {fetchError}</span>
+          <button
+            onClick={fetchItems}
+            className="px-3.5 py-1.5 rounded-xl bg-rose-600 text-white font-bold text-xs hover:bg-rose-700 transition-colors"
+          >
+            Retry
+          </button>
+        </div>
+      )}
+
       {/* Header & Controls Toolbar */}
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 p-5 rounded-2xl border border-slate-200 bg-white shadow-sm">
         <div>
@@ -116,6 +134,20 @@ export const InventoryPage = ({
             <Star className={`w-3.5 h-3.5 ${isFavorite ? 'fill-white' : 'text-slate-400'}`} />
             Favorites
           </button>
+
+          {/* Warranty Filter */}
+          <div className="flex items-center gap-1 bg-slate-100 p-1 rounded-xl border border-slate-200 text-xs font-semibold">
+            <select
+              value={warrantyStatus}
+              onChange={(e) => setWarrantyStatus(e.target.value)}
+              className="bg-transparent text-slate-800 px-2 py-1 focus:outline-none cursor-pointer"
+            >
+              <option value="">All Warranties</option>
+              <option value="active">Active Warranty</option>
+              <option value="expiring">Expiring Soon (30d)</option>
+              <option value="expired">Expired Warranty</option>
+            </select>
+          </div>
 
           {/* Sort Control */}
           <div className="flex items-center gap-1 bg-slate-100 p-1 rounded-xl border border-slate-200 text-xs font-semibold">
@@ -224,6 +256,12 @@ export const InventoryPage = ({
               <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-indigo-50 text-indigo-700 font-semibold border border-indigo-200">
                 Room: {room}
                 <X className="w-3 h-3 cursor-pointer" onClick={() => setRoom('')} />
+              </span>
+            )}
+            {warrantyStatus && (
+              <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-amber-50 text-amber-700 font-semibold border border-amber-200">
+                Warranty: {warrantyStatus}
+                <X className="w-3 h-3 cursor-pointer" onClick={() => setWarrantyStatus('')} />
               </span>
             )}
 
