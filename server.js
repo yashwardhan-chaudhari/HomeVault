@@ -5,6 +5,7 @@ import jwt from 'jsonwebtoken';
 import bcrypt from 'bcryptjs';
 import { createServer as createViteServer } from 'vite';
 import { db } from './src/server/db.js';
+import { sanitizeFilename, validateItemInput } from './src/server/validators.js';
 
 // =====================================
 // 2.1 FIX JWT SECRET HANDLING
@@ -78,111 +79,7 @@ const authenticateToken = (req, res, next) => {
   });
 };
 
-// =====================================
-// 2.6 & 2.7 INPUT & FILE VALIDATION HELPERS
-// =====================================
-const sanitizeFilename = (filename) => {
-  if (!filename || typeof filename !== 'string') return 'attachment';
-  return filename
-    .replace(/^.*[\\/]/, '') // remove directories
-    .replace(/[^a-zA-Z0-9._-]/g, '_') // only safe characters
-    .slice(0, 100);
-};
-
-const validateItemInput = (data) => {
-  const errors = [];
-
-  if (!data || typeof data !== 'object') {
-    return ['Invalid item payload'];
-  }
-
-  // Name
-  if (!data.name || typeof data.name !== 'string' || data.name.trim().length === 0) {
-    errors.push('Item name is required');
-  } else if (data.name.trim().length > 100) {
-    errors.push('Item name cannot exceed 100 characters');
-  }
-
-  // Category
-  if (data.category && (typeof data.category !== 'string' || data.category.length > 50)) {
-    errors.push('Category must be a string up to 50 characters');
-  }
-
-  // Price
-  if (data.price !== undefined && data.price !== null && data.price !== '') {
-    const numPrice = Number(data.price);
-    if (isNaN(numPrice) || numPrice < 0) {
-      errors.push('Price must be a non-negative number');
-    }
-  }
-
-  // Quantity
-  if (data.quantity !== undefined && data.quantity !== null && data.quantity !== '') {
-    const numQty = Number(data.quantity);
-    if (!Number.isInteger(numQty) || numQty < 1) {
-      errors.push('Quantity must be an integer of 1 or greater');
-    }
-  }
-
-  // Dates
-  if (data.purchaseDate && isNaN(Date.parse(data.purchaseDate))) {
-    errors.push('Purchase date must be a valid date');
-  }
-  if (data.warrantyDate && isNaN(Date.parse(data.warrantyDate))) {
-    errors.push('Warranty date must be a valid date');
-  }
-
-  // Condition
-  if (data.condition && !['New', 'Like New', 'Good', 'Fair', 'Poor'].includes(data.condition)) {
-    errors.push('Condition must be one of: New, Like New, Good, Fair, Poor');
-  }
-
-  // Priority
-  if (data.priority && !['Low', 'Medium', 'High', 'Urgent'].includes(data.priority)) {
-    errors.push('Priority must be one of: Low, Medium, High, Urgent');
-  }
-
-  // Images validation (Max 5 images, max 5MB base64 data, allowed formats)
-  if (data.images && Array.isArray(data.images)) {
-    if (data.images.length > 10) {
-      errors.push('A maximum of 10 photos can be attached per item');
-    }
-    for (const img of data.images) {
-      if (typeof img === 'string' && img.startsWith('data:')) {
-        const match = img.match(/^data:(image\/(jpeg|png|webp|gif));base64,/);
-        if (!match) {
-          errors.push('Attached images must be JPEG, PNG, WebP, or GIF');
-          break;
-        }
-        // Base64 size check ~5MB max
-        if (img.length > 7 * 1024 * 1024) {
-          errors.push('Attached image exceeds 5MB size limit');
-          break;
-        }
-      }
-    }
-  }
-
-  // Documents validation (Max 5 documents, max 10MB base64, safe types)
-  if (data.documents && Array.isArray(data.documents)) {
-    if (data.documents.length > 10) {
-      errors.push('A maximum of 10 documents can be attached per item');
-    }
-    for (const doc of data.documents) {
-      if (doc && typeof doc === 'object') {
-        doc.name = sanitizeFilename(doc.name);
-        if (typeof doc.url === 'string' && doc.url.startsWith('data:')) {
-          if (doc.url.length > 14 * 1024 * 1024) {
-            errors.push(`Document "${doc.name}" exceeds 10MB limit`);
-            break;
-          }
-        }
-      }
-    }
-  }
-
-  return errors;
-};
+// Input and file validators imported from ./src/server/validators.js
 
 async function startServer() {
   const app = express();
@@ -473,7 +370,7 @@ async function startServer() {
 
   app.post('/api/items', authenticateToken, (req, res) => {
     try {
-      const validationErrors = validateItemInput(req.body);
+      const validationErrors = validateItemInput(req.body, false);
       if (validationErrors.length > 0) {
         return res.status(400).json({ error: validationErrors.join(', ') });
       }
@@ -481,7 +378,8 @@ async function startServer() {
       const { item: newItem, duplicateWarning } = db.createItem(req.userId, req.body);
       res.status(201).json({
         item: newItem,
-        warning: duplicateWarning || undefined
+        warning: duplicateWarning || undefined,
+        duplicateWarning: duplicateWarning || undefined
       });
     } catch (err) {
       res.status(500).json({ error: err.message || 'Failed to create item' });
@@ -490,7 +388,7 @@ async function startServer() {
 
   app.put('/api/items/:id', authenticateToken, (req, res) => {
     try {
-      const validationErrors = validateItemInput(req.body);
+      const validationErrors = validateItemInput(req.body, true);
       if (validationErrors.length > 0) {
         return res.status(400).json({ error: validationErrors.join(', ') });
       }

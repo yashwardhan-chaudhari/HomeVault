@@ -825,6 +825,34 @@ export class JSONDatabaseManager {
     return this.data.items.find(i => String(i.id) === String(id) && !i.isDeleted && i.userId === userId) || null;
   }
 
+  /**
+   * Check for potential duplicate items based on similar name and location
+   */
+  checkForDuplicate(userId, itemData) {
+    if (!userId || !itemData || !itemData.name) return null;
+    const nameLower = String(itemData.name).trim().toLowerCase();
+    const roomLower = String(itemData.location?.room || '').trim().toLowerCase();
+
+    const existing = this.data.items.find(i => {
+      if (i.userId !== userId || i.isDeleted) return false;
+      const iName = String(i.name).trim().toLowerCase();
+      const iRoom = String(i.location?.room || '').trim().toLowerCase();
+
+      const nameMatch = iName === nameLower || (nameLower.length > 4 && (iName.includes(nameLower) || nameLower.includes(iName)));
+      const roomMatch = !roomLower || !iRoom || iRoom === roomLower;
+
+      return nameMatch && roomMatch;
+    });
+
+    if (existing) {
+      const locDesc = [existing.location?.house, existing.location?.room, existing.location?.cupboard]
+        .filter(Boolean)
+        .join(' → ') || 'your vault';
+      return `Potential duplicate: You already have an item with a similar name "${existing.name}" stored in ${locDesc}.`;
+    }
+    return null;
+  }
+
   createItem(userId, itemData) {
     if (!userId) throw new Error('User ID is required');
 

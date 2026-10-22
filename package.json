@@ -8,8 +8,9 @@
     "build": "vite build && esbuild server.js --bundle --platform=node --format=cjs --packages=external --sourcemap --outfile=dist/server.cjs",
     "start": "node dist/server.cjs",
     "preview": "vite preview",
-    "clean": "rm -rf dist server.js",
-    "lint": "vite build"
+    "clean": "rm -rf dist",
+    "lint": "vite build",
+    "test": "node --test tests/unit/**/*.test.js tests/api/**/*.test.js tests/e2e/**/*.test.js"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.14",
