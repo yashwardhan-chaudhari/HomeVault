@@ -44,9 +44,953 @@
       "createdAt": "2026-09-29T06:25:13.885Z",
       "updatedAt": "2026-09-29T06:25:14.182Z",
       "avatarUrl": "https://example.com/avatar.jpg"
+    },
+    {
+      "id": "user_1792646573038_d63cf1",
+      "email": "sec_test_1792646572854@homevault.app",
+      "fullName": "Security Test User",
+      "passwordHash": "$2b$10$OAtG.i4Lmkw8gg1T37JzK.EsjLRAwIj/U6tTNvhTSafH13D9lSWDu",
+      "role": "user",
+      "themePreference": "light",
+      "notificationPrefs": {
+        "email": true,
+        "warranty": true,
+        "expiry": true,
+        "weeklyDigest": true
+      },
+      "createdAt": "2026-10-22T05:22:53.038Z",
+      "updatedAt": "2026-10-22T05:22:53.500Z"
+    },
+    {
+      "id": "user_1792646632783_907590",
+      "email": "sec_test_1792646632547@homevault.app",
+      "fullName": "Security Test User",
+      "passwordHash": "$2b$10$3H8kH1WEfsZwZPlPmxZyUeTa51a/18mF.JJjvb4titbMeQBVm0Vem",
+      "role": "user",
+      "themePreference": "light",
+      "notificationPrefs": {
+        "email": true,
+        "warranty": true,
+        "expiry": true,
+        "weeklyDigest": true
+      },
+      "createdAt": "2026-10-22T05:23:52.783Z",
+      "updatedAt": "2026-10-22T05:23:53.318Z"
+    },
+    {
+      "id": "user_1792646673859_c455b0",
+      "email": "usera_1792646673689@vault.io",
+      "fullName": "User Alice",
+      "passwordHash": "$2b$10$uSUrxYdC7T96r9ArcYHlgeX.s9jtG0xj4yLphMAjovNl2ENol4tai",
+      "role": "user",
+      "themePreference": "light",
+      "notificationPrefs": {
+        "email": true,
+        "warranty": true,
+        "expiry": true,
+        "weeklyDigest": true
+      },
+      "createdAt": "2026-10-22T05:24:33.860Z",
+      "updatedAt": "2026-10-22T05:24:33.860Z"
+    },
+    {
+      "id": "user_1792646673990_316875",
+      "email": "userb_1792646673689@vault.io",
+      "fullName": "User Bob",
+      "passwordHash": "$2b$10$Wt22jlPwvSl1l9QkdhsZy.MDwc/ROLKRGU7DLs6qWwOzye30z/GOG",
+      "role": "user",
+      "themePreference": "light",
+      "notificationPrefs": {
+        "email": true,
+        "warranty": true,
+        "expiry": true,
+        "weeklyDigest": true
+      },
+      "createdAt": "2026-10-22T05:24:33.991Z",
+      "updatedAt": "2026-10-22T05:24:33.991Z"
+    },
+    {
+      "id": "user_1792646912284_941ff1",
+      "email": "usera_1792646912094@vault.io",
+      "fullName": "User Alice",
+      "passwordHash": "$2b$10$a7ZUC.h6TmMfZfd4JBnjve/ysPUd53PlTBUcbDKC4rWYPDVW75Qdy",
+      "role": "user",
+      "themePreference": "light",
+      "notificationPrefs": {
+        "email": true,
+        "warranty": true,
+        "expiry": true,
+        "weeklyDigest": true
+      },
+      "createdAt": "2026-10-22T05:28:32.284Z",
+      "updatedAt": "2026-10-22T05:28:32.284Z"
+    },
+    {
+      "id": "user_1792646912415_b356b6",
+      "email": "userb_1792646912094@vault.io",
+      "fullName": "User Bob",
+      "passwordHash": "$2b$10$tObsEh1S7P74G7d8OmU/nu7TkecnJOhjeycGql.nT6D6OfptDB1s6",
+      "role": "user",
+      "themePreference": "light",
+      "notificationPrefs": {
+        "email": true,
+        "warranty": true,
+        "expiry": true,
+        "weeklyDigest": true
+      },
+      "createdAt": "2026-10-22T05:28:32.415Z",
+      "updatedAt": "2026-10-22T05:28:32.415Z"
+    },
+    {
+      "id": "user_1792647085658_6354f8",
+      "email": "usera_1792647085443@vault.io",
+      "fullName": "User Alice",
+      "passwordHash": "$2b$10$O1ajkuWIra52sdpRPpLy/uKckdKOhciMkGwDluaAQuEzkvqOaMugW",
+      "role": "user",
+      "themePreference": "light",
+      "notificationPrefs": {
+        "email": true,
+        "warranty": true,
+        "expiry": true,
+        "weeklyDigest": true
+      },
+      "createdAt": "2026-10-22T05:31:25.658Z",
+      "updatedAt": "2026-10-22T05:31:25.659Z"
+    },
+    {
+      "id": "user_1792647085802_870ee1",
+      "email": "userb_1792647085443@vault.io",
+      "fullName": "User Bob",
+      "passwordHash": "$2b$10$UEt5revmy6go4.nWtjDmh.jSd59qBVihsSRXBtLN.so8o6dDUPt1.",
+      "role": "user",
+      "themePreference": "light",
+      "notificationPrefs": {
+        "email": true,
+        "warranty": true,
+        "expiry": true,
+        "weeklyDigest": true
+      },
+      "createdAt": "2026-10-22T05:31:25.802Z",
+      "updatedAt": "2026-10-22T05:31:25.802Z"
+    },
+    {
+      "id": "user_1792647244195_13f73c",
+      "email": "usera_1792647243744@vault.io",
+      "fullName": "User Alice",
+      "passwordHash": "$2b$10$n0hC0BPGL0RV/3bC96HnZueLciwXgN90OsmiJ6QvcRt6BFoHaaXo6",
+      "role": "user",
+      "themePreference": "light",
+      "notificationPrefs": {
+        "email": true,
+        "warranty": true,
+        "expiry": true,
+        "weeklyDigest": true
+      },
+      "createdAt": "2026-10-22T05:34:04.195Z",
+      "updatedAt": "2026-10-22T05:34:04.195Z"
+    },
+    {
+      "id": "user_1792647244518_c65daa",
+      "email": "userb_1792647243744@vault.io",
+      "fullName": "User Bob",
+      "passwordHash": "$2b$10$gr9O4GXyWDd.ybAblb9ce.tw1ffYc9PENZxwGXG/Jvu7pP3PWQPc.",
+      "role": "user",
+      "themePreference": "light",
+      "notificationPrefs": {
+        "email": true,
+        "warranty": true,
+        "expiry": true,
+        "weeklyDigest": true
+      },
+      "createdAt": "2026-10-22T05:34:04.518Z",
+      "updatedAt": "2026-10-22T05:34:04.518Z"
+    },
+    {
+      "id": "user_1792647281556_90bb49",
+      "email": "e2e_user_1792647280576@homevault.app",
+      "fullName": "E2E Test Runner",
+      "passwordHash": "$2b$10$OIuFIXyJCh2M/gXL0MxlcuLDQKucShRwqbbP9yZlHuSzMFbHFwlSG",
+      "role": "user",
+      "themePreference": "light",
+      "notificationPrefs": {
+        "email": true,
+        "warranty": true,
+        "expiry": true,
+        "weeklyDigest": true
+      },
+      "createdAt": "2026-10-22T05:34:41.556Z",
+      "updatedAt": "2026-10-22T05:34:41.556Z"
+    },
+    {
+      "id": "user_1792647347506_4b208e",
+      "email": "e2e_user_1792647347266@homevault.app",
+      "fullName": "E2E Test Runner",
+      "passwordHash": "$2b$10$J5Bl12zeTUVSX3ZkQNq54Ond44NoARC6Hc8MfF6uLH1ZFy2x9UKZe",
+      "role": "user",
+      "themePreference": "light",
+      "notificationPrefs": {
+        "email": true,
+        "warranty": true,
+        "expiry": true,
+        "weeklyDigest": true
+      },
+      "createdAt": "2026-10-22T05:35:47.506Z",
+      "updatedAt": "2026-10-22T05:35:47.506Z"
+    },
+    {
+      "id": "user_1792647358673_1bb17d",
+      "email": "usera_1792647358415@vault.io",
+      "fullName": "User Alice",
+      "passwordHash": "$2b$10$4mRA.Km1xN.P92WWbRDvXeDYkxQq.2q7UkEMk4eMZEqqbY.8Kbr0G",
+      "role": "user",
+      "themePreference": "light",
+      "notificationPrefs": {
+        "email": true,
+        "warranty": true,
+        "expiry": true,
+        "weeklyDigest": true
+      },
+      "createdAt": "2026-10-22T05:35:58.673Z",
+      "updatedAt": "2026-10-22T05:35:58.673Z"
+    },
+    {
+      "id": "user_1792647358789_5fe0f6",
+      "email": "sec_test_1792647358412@homevault.app",
+      "fullName": "Security Test User",
+      "passwordHash": "$2b$10$mFWmlikHVGWQCbt2.8wLTuU8X7ZhdPphvMy0OR9EuG4BYN7ZRZFwa",
+      "role": "user",
+      "themePreference": "light",
+      "notificationPrefs": {
+        "email": true,
+        "warranty": true,
+        "expiry": true,
+        "weeklyDigest": true
+      },
+      "createdAt": "2026-10-22T05:35:58.790Z",
+      "updatedAt": "2026-10-22T05:35:59.913Z"
+    },
+    {
+      "id": "user_1792647358906_2f2a17",
+      "email": "e2e_user_1792647358442@homevault.app",
+      "fullName": "E2E Test Runner",
+      "passwordHash": "$2b$10$5VMbkMiQaLCW9dkxOZVZLurAzdK9zgbnph515qiY/3ZTvuuJNthEu",
+      "role": "user",
+      "themePreference": "light",
+      "notificationPrefs": {
+        "email": true,
+        "warranty": true,
+        "expiry": true,
+        "weeklyDigest": true
+      },
+      "createdAt": "2026-10-22T05:35:58.906Z",
+      "updatedAt": "2026-10-22T05:35:58.906Z"
+    },
+    {
+      "id": "user_1792647359028_a28146",
+      "email": "userb_1792647358415@vault.io",
+      "fullName": "User Bob",
+      "passwordHash": "$2b$10$.ygeAZV8h/F6iil0H8p3GOLShsV3rCQCeYQqOvr0KskOkC43lz9.i",
+      "role": "user",
+      "themePreference": "light",
+      "notificationPrefs": {
+        "email": true,
+        "warranty": true,
+        "expiry": true,
+        "weeklyDigest": true
+      },
+      "createdAt": "2026-10-22T05:35:59.028Z",
+      "updatedAt": "2026-10-22T05:35:59.028Z"
+    },
+    {
+      "id": "user_1792647780011_7c3dbe",
+      "email": "usera_1792647779713@vault.io",
+      "fullName": "User Alice",
+      "passwordHash": "$2b$10$pyIm.TLFERGTxp4sbJXJ2.48OCyvLS0R4oxoY6FwYsC9M1D12XOR2",
+      "role": "user",
+      "themePreference": "light",
+      "notificationPrefs": {
+        "email": true,
+        "warranty": true,
+        "expiry": true,
+        "weeklyDigest": true
+      },
+      "createdAt": "2026-10-22T05:43:00.011Z",
+      "updatedAt": "2026-10-22T05:43:00.011Z"
+    },
+    {
+      "id": "user_1792647780165_e8a252",
+      "email": "sec_test_1792647779670@homevault.app",
+      "fullName": "Security Test User",
+      "passwordHash": "$2b$10$YPW3ZQ8OSIZz7rPzcAtAJegiI.3ZtOAT6P92yq3eoIzZObnDrA.RC",
+      "role": "user",
+      "themePreference": "light",
+      "notificationPrefs": {
+        "email": true,
+        "warranty": true,
+        "expiry": true,
+        "weeklyDigest": true
+      },
+      "createdAt": "2026-10-22T05:43:00.165Z",
+      "updatedAt": "2026-10-22T05:43:01.076Z"
+    },
+    {
+      "id": "user_1792647780292_22ae2e",
+      "email": "e2e_user_1792647779710@homevault.app",
+      "fullName": "E2E Test Runner",
+      "passwordHash": "$2b$10$jPjoLBkceWmogYwuvkxDgedhpz3eW/J5hVP3CEMn7D4sLxMGaBieC",
+      "role": "user",
+      "themePreference": "light",
+      "notificationPrefs": {
+        "email": true,
+        "warranty": true,
+        "expiry": true,
+        "weeklyDigest": true
+      },
+      "createdAt": "2026-10-22T05:43:00.293Z",
+      "updatedAt": "2026-10-22T05:43:00.293Z"
+    },
+    {
+      "id": "user_1792647780426_5aef3a",
+      "email": "userb_1792647779713@vault.io",
+      "fullName": "User Bob",
+      "passwordHash": "$2b$10$LJ/iA3PxImLHNVbblYbqKuOKmM0zeR04L1o.fgfEw0bDBIhuMwxBC",
+      "role": "user",
+      "themePreference": "light",
+      "notificationPrefs": {
+        "email": true,
+        "warranty": true,
+        "expiry": true,
+        "weeklyDigest": true
+      },
+      "createdAt": "2026-10-22T05:43:00.426Z",
+      "updatedAt": "2026-10-22T05:43:00.426Z"
     }
   ],
   "items": [
+    {
+      "id": "item_1792647780733_a6a250",
+      "userId": "user_1792647780011_7c3dbe",
+      "name": "MacBook Pro 16 M3",
+      "description": "",
+      "category": "Electronics",
+      "subcategory": "",
+      "brand": "",
+      "tags": [],
+      "price": 249990,
+      "purchaseDate": "",
+      "warrantyDate": "",
+      "quantity": 1,
+      "condition": "Good",
+      "priority": "Medium",
+      "serialNumber": "",
+      "notes": "",
+      "isFavorite": false,
+      "isDeleted": false,
+      "location": {
+        "house": "Main Residence",
+        "floor": "1st Floor",
+        "room": "Study Room",
+        "cupboard": "",
+        "shelf": "",
+        "drawer": "",
+        "container": "",
+        "exactPosition": ""
+      },
+      "images": [
+        "https://images.unsplash.com/photo-1584438784894-089d6a62b8fa?w=800&auto=format&fit=crop&q=80"
+      ],
+      "videos": [],
+      "documents": [],
+      "viewedCount": 1,
+      "lastViewedAt": "2026-10-22T05:43:00.733Z",
+      "createdAt": "2026-10-22T05:43:00.733Z",
+      "updatedAt": "2026-10-22T05:43:00.733Z"
+    },
+    {
+      "id": "item_1792647780511_ea6bee",
+      "userId": "user_1792647780011_7c3dbe",
+      "name": "MacBook Pro 16 M3",
+      "description": "",
+      "category": "Electronics",
+      "subcategory": "",
+      "brand": "",
+      "tags": [],
+      "price": 249990,
+      "purchaseDate": "2024-06-01",
+      "warrantyDate": "2027-06-01",
+      "quantity": 1,
+      "condition": "Like New",
+      "priority": "High",
+      "serialNumber": "",
+      "notes": "Updated notes with asset tag #7721",
+      "isFavorite": false,
+      "isDeleted": true,
+      "location": {
+        "house": "Main House",
+        "floor": "2nd Floor",
+        "room": "Study Room",
+        "cupboard": "Work Desk",
+        "shelf": "",
+        "drawer": "Top Drawer",
+        "container": "",
+        "exactPosition": "Left sleeve"
+      },
+      "images": [
+        "https://images.unsplash.com/photo-1584438784894-089d6a62b8fa?w=800&auto=format&fit=crop&q=80"
+      ],
+      "videos": [],
+      "documents": [],
+      "viewedCount": 1,
+      "lastViewedAt": "2026-10-22T05:43:00.511Z",
+      "createdAt": "2026-10-22T05:43:00.511Z",
+      "updatedAt": "2026-10-22T05:43:01.431Z"
+    },
+    {
+      "id": "item_1792647780448_2d7525",
+      "userId": "user_1792647780292_22ae2e",
+      "name": "Delonghi Espresso Machine",
+      "description": "",
+      "category": "Appliances",
+      "subcategory": "Kitchen",
+      "brand": "DeLonghi",
+      "tags": [
+        "Kitchen",
+        "Coffee",
+        "Italian"
+      ],
+      "price": 42000,
+      "purchaseDate": "2024-03-10",
+      "warrantyDate": "2026-03-10",
+      "quantity": 1,
+      "condition": "Like New",
+      "priority": "High",
+      "serialNumber": "",
+      "notes": "Relocated to pantry for kitchen remodeling",
+      "isFavorite": false,
+      "isDeleted": true,
+      "location": {
+        "house": "Summer Cottage",
+        "floor": "Ground Floor",
+        "room": "Pantry",
+        "cupboard": "Storage Shelf A"
+      },
+      "images": [
+        "https://images.unsplash.com/photo-1584438784894-089d6a62b8fa?w=800&auto=format&fit=crop&q=80"
+      ],
+      "videos": [],
+      "documents": [],
+      "viewedCount": 2,
+      "lastViewedAt": "2026-10-22T05:43:00.503Z",
+      "createdAt": "2026-10-22T05:43:00.448Z",
+      "updatedAt": "2026-10-22T05:43:00.923Z"
+    },
+    {
+      "id": "item_1792647359458_c5eff7",
+      "userId": "user_1792647358673_1bb17d",
+      "name": "MacBook Pro 16 M3",
+      "description": "",
+      "category": "Electronics",
+      "subcategory": "",
+      "brand": "",
+      "tags": [],
+      "price": 249990,
+      "purchaseDate": "",
+      "warrantyDate": "",
+      "quantity": 1,
+      "condition": "Good",
+      "priority": "Medium",
+      "serialNumber": "",
+      "notes": "",
+      "isFavorite": false,
+      "isDeleted": false,
+      "location": {
+        "house": "Main Residence",
+        "floor": "1st Floor",
+        "room": "Study Room",
+        "cupboard": "",
+        "shelf": "",
+        "drawer": "",
+        "container": "",
+        "exactPosition": ""
+      },
+      "images": [
+        "https://images.unsplash.com/photo-1584438784894-089d6a62b8fa?w=800&auto=format&fit=crop&q=80"
+      ],
+      "videos": [],
+      "documents": [],
+      "viewedCount": 1,
+      "lastViewedAt": "2026-10-22T05:35:59.459Z",
+      "createdAt": "2026-10-22T05:35:59.459Z",
+      "updatedAt": "2026-10-22T05:35:59.459Z"
+    },
+    {
+      "id": "item_1792647359079_698293",
+      "userId": "user_1792647358673_1bb17d",
+      "name": "MacBook Pro 16 M3",
+      "description": "",
+      "category": "Electronics",
+      "subcategory": "",
+      "brand": "",
+      "tags": [],
+      "price": 249990,
+      "purchaseDate": "2024-06-01",
+      "warrantyDate": "2027-06-01",
+      "quantity": 1,
+      "condition": "Like New",
+      "priority": "High",
+      "serialNumber": "",
+      "notes": "Updated notes with asset tag #7721",
+      "isFavorite": false,
+      "isDeleted": true,
+      "location": {
+        "house": "Main House",
+        "floor": "2nd Floor",
+        "room": "Study Room",
+        "cupboard": "Work Desk",
+        "shelf": "",
+        "drawer": "Top Drawer",
+        "container": "",
+        "exactPosition": "Left sleeve"
+      },
+      "images": [
+        "https://images.unsplash.com/photo-1584438784894-089d6a62b8fa?w=800&auto=format&fit=crop&q=80"
+      ],
+      "videos": [],
+      "documents": [],
+      "viewedCount": 1,
+      "lastViewedAt": "2026-10-22T05:35:59.079Z",
+      "createdAt": "2026-10-22T05:35:59.079Z",
+      "updatedAt": "2026-10-22T05:36:00.533Z"
+    },
+    {
+      "id": "item_1792647359043_835461",
+      "userId": "user_1792647358906_2f2a17",
+      "name": "Delonghi Espresso Machine",
+      "description": "",
+      "category": "Appliances",
+      "subcategory": "Kitchen",
+      "brand": "DeLonghi",
+      "tags": [
+        "Kitchen",
+        "Coffee",
+        "Italian"
+      ],
+      "price": 42000,
+      "purchaseDate": "2024-03-10",
+      "warrantyDate": "2026-03-10",
+      "quantity": 1,
+      "condition": "Like New",
+      "priority": "High",
+      "serialNumber": "",
+      "notes": "Relocated to pantry for kitchen remodeling",
+      "isFavorite": false,
+      "isDeleted": true,
+      "location": {
+        "house": "Summer Cottage",
+        "floor": "Ground Floor",
+        "room": "Pantry",
+        "cupboard": "Storage Shelf A"
+      },
+      "images": [
+        "https://images.unsplash.com/photo-1584438784894-089d6a62b8fa?w=800&auto=format&fit=crop&q=80"
+      ],
+      "videos": [],
+      "documents": [],
+      "viewedCount": 2,
+      "lastViewedAt": "2026-10-22T05:35:59.071Z",
+      "createdAt": "2026-10-22T05:35:59.044Z",
+      "updatedAt": "2026-10-22T05:35:59.777Z"
+    },
+    {
+      "id": "item_1792647347541_fe82eb",
+      "userId": "user_1792647347506_4b208e",
+      "name": "Delonghi Espresso Machine",
+      "description": "",
+      "category": "Appliances",
+      "subcategory": "Kitchen",
+      "brand": "DeLonghi",
+      "tags": [
+        "Kitchen",
+        "Coffee",
+        "Italian"
+      ],
+      "price": 42000,
+      "purchaseDate": "2024-03-10",
+      "warrantyDate": "2026-03-10",
+      "quantity": 1,
+      "condition": "Like New",
+      "priority": "High",
+      "serialNumber": "",
+      "notes": "Relocated to pantry for kitchen remodeling",
+      "isFavorite": false,
+      "isDeleted": true,
+      "location": {
+        "house": "Summer Cottage",
+        "floor": "Ground Floor",
+        "room": "Pantry",
+        "cupboard": "Storage Shelf A"
+      },
+      "images": [
+        "https://images.unsplash.com/photo-1584438784894-089d6a62b8fa?w=800&auto=format&fit=crop&q=80"
+      ],
+      "videos": [],
+      "documents": [],
+      "viewedCount": 2,
+      "lastViewedAt": "2026-10-22T05:35:47.571Z",
+      "createdAt": "2026-10-22T05:35:47.541Z",
+      "updatedAt": "2026-10-22T05:35:47.701Z"
+    },
+    {
+      "id": "item_1792647281610_e267c7",
+      "userId": "user_1792647281556_90bb49",
+      "name": "Delonghi Espresso Machine",
+      "description": "",
+      "category": "Appliances",
+      "subcategory": "Kitchen",
+      "brand": "DeLonghi",
+      "tags": [
+        "Kitchen",
+        "Coffee",
+        "Italian"
+      ],
+      "price": 42000,
+      "purchaseDate": "2024-03-10",
+      "warrantyDate": "2026-03-10",
+      "quantity": 1,
+      "condition": "Like New",
+      "priority": "High",
+      "serialNumber": "",
+      "notes": "Relocated to pantry for kitchen remodeling",
+      "isFavorite": false,
+      "isDeleted": true,
+      "location": {
+        "house": "Summer Cottage",
+        "floor": "Ground Floor",
+        "room": "Pantry",
+        "cupboard": "Storage Shelf A"
+      },
+      "images": [
+        "https://images.unsplash.com/photo-1584438784894-089d6a62b8fa?w=800&auto=format&fit=crop&q=80"
+      ],
+      "videos": [],
+      "documents": [],
+      "viewedCount": 2,
+      "lastViewedAt": "2026-10-22T05:34:41.641Z",
+      "createdAt": "2026-10-22T05:34:41.610Z",
+      "updatedAt": "2026-10-22T05:34:41.858Z"
+    },
+    {
+      "id": "item_1792647244881_a697ba",
+      "userId": "user_1792647244195_13f73c",
+      "name": "MacBook Pro 16 M3",
+      "description": "",
+      "category": "Electronics",
+      "subcategory": "",
+      "brand": "",
+      "tags": [],
+      "price": 249990,
+      "purchaseDate": "",
+      "warrantyDate": "",
+      "quantity": 1,
+      "condition": "Good",
+      "priority": "Medium",
+      "serialNumber": "",
+      "notes": "",
+      "isFavorite": false,
+      "isDeleted": false,
+      "location": {
+        "house": "Main Residence",
+        "floor": "1st Floor",
+        "room": "Study Room",
+        "cupboard": "",
+        "shelf": "",
+        "drawer": "",
+        "container": "",
+        "exactPosition": ""
+      },
+      "images": [
+        "https://images.unsplash.com/photo-1584438784894-089d6a62b8fa?w=800&auto=format&fit=crop&q=80"
+      ],
+      "videos": [],
+      "documents": [],
+      "viewedCount": 1,
+      "lastViewedAt": "2026-10-22T05:34:04.882Z",
+      "createdAt": "2026-10-22T05:34:04.882Z",
+      "updatedAt": "2026-10-22T05:34:04.882Z"
+    },
+    {
+      "id": "item_1792647244849_88b891",
+      "userId": "user_1792647244195_13f73c",
+      "name": "MacBook Pro 16 M3",
+      "description": "",
+      "category": "Electronics",
+      "subcategory": "",
+      "brand": "",
+      "tags": [],
+      "price": 249990,
+      "purchaseDate": "2024-06-01",
+      "warrantyDate": "2027-06-01",
+      "quantity": 1,
+      "condition": "Like New",
+      "priority": "High",
+      "serialNumber": "",
+      "notes": "Updated notes with asset tag #7721",
+      "isFavorite": false,
+      "isDeleted": true,
+      "location": {
+        "house": "Main House",
+        "floor": "2nd Floor",
+        "room": "Study Room",
+        "cupboard": "Work Desk",
+        "shelf": "",
+        "drawer": "Top Drawer",
+        "container": "",
+        "exactPosition": "Left sleeve"
+      },
+      "images": [
+        "https://images.unsplash.com/photo-1584438784894-089d6a62b8fa?w=800&auto=format&fit=crop&q=80"
+      ],
+      "videos": [],
+      "documents": [],
+      "viewedCount": 1,
+      "lastViewedAt": "2026-10-22T05:34:04.849Z",
+      "createdAt": "2026-10-22T05:34:04.850Z",
+      "updatedAt": "2026-10-22T05:34:05.126Z"
+    },
+    {
+      "id": "item_1792647085853_8b9019",
+      "userId": "user_1792647085658_6354f8",
+      "name": "MacBook Pro 16 M3",
+      "description": "",
+      "category": "Electronics",
+      "subcategory": "",
+      "brand": "",
+      "tags": [],
+      "price": 249990,
+      "purchaseDate": "",
+      "warrantyDate": "",
+      "quantity": 1,
+      "condition": "Good",
+      "priority": "Medium",
+      "serialNumber": "",
+      "notes": "",
+      "isFavorite": false,
+      "isDeleted": false,
+      "location": {
+        "house": "Main Residence",
+        "floor": "1st Floor",
+        "room": "Study Room",
+        "cupboard": "",
+        "shelf": "",
+        "drawer": "",
+        "container": "",
+        "exactPosition": ""
+      },
+      "images": [
+        "https://images.unsplash.com/photo-1584438784894-089d6a62b8fa?w=800&auto=format&fit=crop&q=80"
+      ],
+      "videos": [],
+      "documents": [],
+      "viewedCount": 1,
+      "lastViewedAt": "2026-10-22T05:31:25.853Z",
+      "createdAt": "2026-10-22T05:31:25.853Z",
+      "updatedAt": "2026-10-22T05:31:25.853Z"
+    },
+    {
+      "id": "item_1792647085831_c6640b",
+      "userId": "user_1792647085658_6354f8",
+      "name": "MacBook Pro 16 M3",
+      "description": "",
+      "category": "Electronics",
+      "subcategory": "",
+      "brand": "",
+      "tags": [],
+      "price": 249990,
+      "purchaseDate": "2024-06-01",
+      "warrantyDate": "2027-06-01",
+      "quantity": 1,
+      "condition": "Like New",
+      "priority": "High",
+      "serialNumber": "",
+      "notes": "Updated notes with asset tag #7721",
+      "isFavorite": false,
+      "isDeleted": true,
+      "location": {
+        "house": "Main House",
+        "floor": "2nd Floor",
+        "room": "Study Room",
+        "cupboard": "Work Desk",
+        "shelf": "",
+        "drawer": "Top Drawer",
+        "container": "",
+        "exactPosition": "Left sleeve"
+      },
+      "images": [
+        "https://images.unsplash.com/photo-1584438784894-089d6a62b8fa?w=800&auto=format&fit=crop&q=80"
+      ],
+      "videos": [],
+      "documents": [],
+      "viewedCount": 1,
+      "lastViewedAt": "2026-10-22T05:31:25.831Z",
+      "createdAt": "2026-10-22T05:31:25.831Z",
+      "updatedAt": "2026-10-22T05:31:25.952Z"
+    },
+    {
+      "id": "item_1792646912469_068a49",
+      "userId": "user_1792646912284_941ff1",
+      "name": "MacBook Pro 16 M3",
+      "description": "",
+      "category": "Electronics",
+      "subcategory": "",
+      "brand": "",
+      "tags": [],
+      "price": 249990,
+      "purchaseDate": "",
+      "warrantyDate": "",
+      "quantity": 1,
+      "condition": "Good",
+      "priority": "Medium",
+      "serialNumber": "",
+      "notes": "",
+      "isFavorite": false,
+      "isDeleted": false,
+      "location": {
+        "house": "Main Residence",
+        "floor": "1st Floor",
+        "room": "Study Room",
+        "cupboard": "",
+        "shelf": "",
+        "drawer": "",
+        "container": "",
+        "exactPosition": ""
+      },
+      "images": [
+        "https://images.unsplash.com/photo-1584438784894-089d6a62b8fa?w=800&auto=format&fit=crop&q=80"
+      ],
+      "videos": [],
+      "documents": [],
+      "viewedCount": 1,
+      "lastViewedAt": "2026-10-22T05:28:32.469Z",
+      "createdAt": "2026-10-22T05:28:32.469Z",
+      "updatedAt": "2026-10-22T05:28:32.469Z"
+    },
+    {
+      "id": "item_1792646912443_9d1e6c",
+      "userId": "user_1792646912284_941ff1",
+      "name": "MacBook Pro 16 M3",
+      "description": "",
+      "category": "Electronics",
+      "subcategory": "",
+      "brand": "",
+      "tags": [],
+      "price": 249990,
+      "purchaseDate": "2024-06-01",
+      "warrantyDate": "2027-06-01",
+      "quantity": 1,
+      "condition": "Like New",
+      "priority": "High",
+      "serialNumber": "",
+      "notes": "",
+      "isFavorite": false,
+      "isDeleted": true,
+      "location": {
+        "house": "Main House",
+        "floor": "2nd Floor",
+        "room": "Study Room",
+        "cupboard": "Work Desk",
+        "shelf": "",
+        "drawer": "Top Drawer",
+        "container": "",
+        "exactPosition": "Left sleeve"
+      },
+      "images": [
+        "https://images.unsplash.com/photo-1584438784894-089d6a62b8fa?w=800&auto=format&fit=crop&q=80"
+      ],
+      "videos": [],
+      "documents": [],
+      "viewedCount": 1,
+      "lastViewedAt": "2026-10-22T05:28:32.443Z",
+      "createdAt": "2026-10-22T05:28:32.444Z",
+      "updatedAt": "2026-10-22T05:28:32.544Z"
+    },
+    {
+      "id": "item_1792646674034_069c67",
+      "userId": "user_1792646673859_c455b0",
+      "name": "MacBook Pro 16 M3",
+      "description": "",
+      "category": "Electronics",
+      "subcategory": "",
+      "brand": "",
+      "tags": [],
+      "price": 249990,
+      "purchaseDate": "",
+      "warrantyDate": "",
+      "quantity": 1,
+      "condition": "Good",
+      "priority": "Medium",
+      "serialNumber": "",
+      "notes": "",
+      "isFavorite": false,
+      "isDeleted": false,
+      "location": {
+        "house": "Main Residence",
+        "floor": "1st Floor",
+        "room": "Study Room",
+        "cupboard": "",
+        "shelf": "",
+        "drawer": "",
+        "container": "",
+        "exactPosition": ""
+      },
+      "images": [
+        "https://images.unsplash.com/photo-1584438784894-089d6a62b8fa?w=800&auto=format&fit=crop&q=80"
+      ],
+      "videos": [],
+      "documents": [],
+      "viewedCount": 1,
+      "lastViewedAt": "2026-10-22T05:24:34.034Z",
+      "createdAt": "2026-10-22T05:24:34.035Z",
+      "updatedAt": "2026-10-22T05:24:34.035Z"
+    },
+    {
+      "id": "item_1792646674014_36e639",
+      "userId": "user_1792646673859_c455b0",
+      "name": "MacBook Pro 16 M3",
+      "description": "",
+      "category": "Electronics",
+      "subcategory": "",
+      "brand": "",
+      "tags": [],
+      "price": 249990,
+      "purchaseDate": "2024-06-01",
+      "warrantyDate": "2027-06-01",
+      "quantity": 1,
+      "condition": "Like New",
+      "priority": "High",
+      "serialNumber": "",
+      "notes": "",
+      "isFavorite": false,
+      "isDeleted": true,
+      "location": {
+        "house": "Main House",
+        "floor": "2nd Floor",
+        "room": "Study Room",
+        "cupboard": "Work Desk",
+        "shelf": "",
+        "drawer": "Top Drawer",
+        "container": "",
+        "exactPosition": "Left sleeve"
+      },
+      "images": [
+        "https://images.unsplash.com/photo-1584438784894-089d6a62b8fa?w=800&auto=format&fit=crop&q=80"
+      ],
+      "videos": [],
+      "documents": [],
+      "viewedCount": 1,
+      "lastViewedAt": "2026-10-22T05:24:34.014Z",
+      "createdAt": "2026-10-22T05:24:34.014Z",
+      "updatedAt": "2026-10-22T05:24:34.099Z"
+    },
     {
       "id": "item_1792645299678_3d6vr",
       "userId": "user_demo_001",
@@ -482,6 +1426,348 @@
   ],
   "activityLogs": [
     {
+      "id": "log_1792647781431_ed447b",
+      "userId": "user_1792647780011_7c3dbe",
+      "itemId": "item_1792647780511_ea6bee",
+      "itemName": "MacBook Pro 16 M3",
+      "action": "Deleted",
+      "details": "Removed item from vault",
+      "timestamp": "2026-10-22T05:43:01.431Z"
+    },
+    {
+      "id": "log_1792647781279_fcb4e3",
+      "userId": "user_1792647780011_7c3dbe",
+      "itemId": "item_1792647780511_ea6bee",
+      "itemName": "MacBook Pro 16 M3",
+      "action": "Updated",
+      "details": "Updated item details and metadata",
+      "timestamp": "2026-10-22T05:43:01.279Z"
+    },
+    {
+      "id": "log_1792647781076_f65713",
+      "userId": "user_1792647780165_e8a252",
+      "itemId": "auth_security",
+      "itemName": "Account Security",
+      "action": "Updated",
+      "details": "Password was reset using secure recovery token",
+      "timestamp": "2026-10-22T05:43:01.077Z"
+    },
+    {
+      "id": "log_1792647780923_4c8023",
+      "userId": "user_1792647780292_22ae2e",
+      "itemId": "item_1792647780448_2d7525",
+      "itemName": "Delonghi Espresso Machine",
+      "action": "Deleted",
+      "details": "Removed item from vault",
+      "timestamp": "2026-10-22T05:43:00.923Z"
+    },
+    {
+      "id": "log_1792647780733_2645d0",
+      "userId": "user_1792647780011_7c3dbe",
+      "itemId": "item_1792647780733_a6a250",
+      "itemName": "MacBook Pro 16 M3",
+      "action": "Created",
+      "details": "Added item to Main Residence → Study Room",
+      "timestamp": "2026-10-22T05:43:00.734Z"
+    },
+    {
+      "id": "log_1792647780717_43194e",
+      "userId": "user_1792647780292_22ae2e",
+      "itemId": "item_1792647780448_2d7525",
+      "itemName": "Delonghi Espresso Machine",
+      "action": "Moved",
+      "details": "Moved from Summer Cottage → Kitchen → Coffee Counter to Summer Cottage → Pantry → Storage Shelf A",
+      "timestamp": "2026-10-22T05:43:00.717Z"
+    },
+    {
+      "id": "log_1792647780511_c61ac6",
+      "userId": "user_1792647780011_7c3dbe",
+      "itemId": "item_1792647780511_ea6bee",
+      "itemName": "MacBook Pro 16 M3",
+      "action": "Created",
+      "details": "Added item to Main House → Study Room → Work Desk",
+      "timestamp": "2026-10-22T05:43:00.512Z"
+    },
+    {
+      "id": "log_1792647780448_955f5d",
+      "userId": "user_1792647780292_22ae2e",
+      "itemId": "item_1792647780448_2d7525",
+      "itemName": "Delonghi Espresso Machine",
+      "action": "Created",
+      "details": "Added item to Summer Cottage → Kitchen → Coffee Counter → Top Rack",
+      "timestamp": "2026-10-22T05:43:00.448Z"
+    },
+    {
+      "id": "log_1792647360533_983563",
+      "userId": "user_1792647358673_1bb17d",
+      "itemId": "item_1792647359079_698293",
+      "itemName": "MacBook Pro 16 M3",
+      "action": "Deleted",
+      "details": "Removed item from vault",
+      "timestamp": "2026-10-22T05:36:00.534Z"
+    },
+    {
+      "id": "log_1792647360213_253aa7",
+      "userId": "user_1792647358673_1bb17d",
+      "itemId": "item_1792647359079_698293",
+      "itemName": "MacBook Pro 16 M3",
+      "action": "Updated",
+      "details": "Updated item details and metadata",
+      "timestamp": "2026-10-22T05:36:00.213Z"
+    },
+    {
+      "id": "log_1792647359914_4ab6c8",
+      "userId": "user_1792647358789_5fe0f6",
+      "itemId": "auth_security",
+      "itemName": "Account Security",
+      "action": "Updated",
+      "details": "Password was reset using secure recovery token",
+      "timestamp": "2026-10-22T05:35:59.914Z"
+    },
+    {
+      "id": "log_1792647359777_2fb332",
+      "userId": "user_1792647358906_2f2a17",
+      "itemId": "item_1792647359043_835461",
+      "itemName": "Delonghi Espresso Machine",
+      "action": "Deleted",
+      "details": "Removed item from vault",
+      "timestamp": "2026-10-22T05:35:59.777Z"
+    },
+    {
+      "id": "log_1792647359459_dcb59f",
+      "userId": "user_1792647358673_1bb17d",
+      "itemId": "item_1792647359458_c5eff7",
+      "itemName": "MacBook Pro 16 M3",
+      "action": "Created",
+      "details": "Added item to Main Residence → Study Room",
+      "timestamp": "2026-10-22T05:35:59.459Z"
+    },
+    {
+      "id": "log_1792647359441_ee9280",
+      "userId": "user_1792647358906_2f2a17",
+      "itemId": "item_1792647359043_835461",
+      "itemName": "Delonghi Espresso Machine",
+      "action": "Moved",
+      "details": "Moved from Summer Cottage → Kitchen → Coffee Counter to Summer Cottage → Pantry → Storage Shelf A",
+      "timestamp": "2026-10-22T05:35:59.441Z"
+    },
+    {
+      "id": "log_1792647359079_1acf17",
+      "userId": "user_1792647358673_1bb17d",
+      "itemId": "item_1792647359079_698293",
+      "itemName": "MacBook Pro 16 M3",
+      "action": "Created",
+      "details": "Added item to Main House → Study Room → Work Desk",
+      "timestamp": "2026-10-22T05:35:59.079Z"
+    },
+    {
+      "id": "log_1792647359044_6504ef",
+      "userId": "user_1792647358906_2f2a17",
+      "itemId": "item_1792647359043_835461",
+      "itemName": "Delonghi Espresso Machine",
+      "action": "Created",
+      "details": "Added item to Summer Cottage → Kitchen → Coffee Counter → Top Rack",
+      "timestamp": "2026-10-22T05:35:59.044Z"
+    },
+    {
+      "id": "log_1792647347701_04f8a6",
+      "userId": "user_1792647347506_4b208e",
+      "itemId": "item_1792647347541_fe82eb",
+      "itemName": "Delonghi Espresso Machine",
+      "action": "Deleted",
+      "details": "Removed item from vault",
+      "timestamp": "2026-10-22T05:35:47.701Z"
+    },
+    {
+      "id": "log_1792647347624_fbeb0d",
+      "userId": "user_1792647347506_4b208e",
+      "itemId": "item_1792647347541_fe82eb",
+      "itemName": "Delonghi Espresso Machine",
+      "action": "Moved",
+      "details": "Moved from Summer Cottage → Kitchen → Coffee Counter to Summer Cottage → Pantry → Storage Shelf A",
+      "timestamp": "2026-10-22T05:35:47.624Z"
+    },
+    {
+      "id": "log_1792647347541_adc20d",
+      "userId": "user_1792647347506_4b208e",
+      "itemId": "item_1792647347541_fe82eb",
+      "itemName": "Delonghi Espresso Machine",
+      "action": "Created",
+      "details": "Added item to Summer Cottage → Kitchen → Coffee Counter → Top Rack",
+      "timestamp": "2026-10-22T05:35:47.541Z"
+    },
+    {
+      "id": "log_1792647281858_3594a1",
+      "userId": "user_1792647281556_90bb49",
+      "itemId": "item_1792647281610_e267c7",
+      "itemName": "Delonghi Espresso Machine",
+      "action": "Deleted",
+      "details": "Removed item from vault",
+      "timestamp": "2026-10-22T05:34:41.859Z"
+    },
+    {
+      "id": "log_1792647281675_3b0812",
+      "userId": "user_1792647281556_90bb49",
+      "itemId": "item_1792647281610_e267c7",
+      "itemName": "Delonghi Espresso Machine",
+      "action": "Moved",
+      "details": "Moved from Summer Cottage → Kitchen → Coffee Counter to Summer Cottage → Pantry → Storage Shelf A",
+      "timestamp": "2026-10-22T05:34:41.676Z"
+    },
+    {
+      "id": "log_1792647281610_82aa7d",
+      "userId": "user_1792647281556_90bb49",
+      "itemId": "item_1792647281610_e267c7",
+      "itemName": "Delonghi Espresso Machine",
+      "action": "Created",
+      "details": "Added item to Summer Cottage → Kitchen → Coffee Counter → Top Rack",
+      "timestamp": "2026-10-22T05:34:41.610Z"
+    },
+    {
+      "id": "log_1792647245126_e51038",
+      "userId": "user_1792647244195_13f73c",
+      "itemId": "item_1792647244849_88b891",
+      "itemName": "MacBook Pro 16 M3",
+      "action": "Deleted",
+      "details": "Removed item from vault",
+      "timestamp": "2026-10-22T05:34:05.126Z"
+    },
+    {
+      "id": "log_1792647245065_4f30a8",
+      "userId": "user_1792647244195_13f73c",
+      "itemId": "item_1792647244849_88b891",
+      "itemName": "MacBook Pro 16 M3",
+      "action": "Updated",
+      "details": "Updated item details and metadata",
+      "timestamp": "2026-10-22T05:34:05.065Z"
+    },
+    {
+      "id": "log_1792647244882_0f0308",
+      "userId": "user_1792647244195_13f73c",
+      "itemId": "item_1792647244881_a697ba",
+      "itemName": "MacBook Pro 16 M3",
+      "action": "Created",
+      "details": "Added item to Main Residence → Study Room",
+      "timestamp": "2026-10-22T05:34:04.882Z"
+    },
+    {
+      "id": "log_1792647244850_ced1b9",
+      "userId": "user_1792647244195_13f73c",
+      "itemId": "item_1792647244849_88b891",
+      "itemName": "MacBook Pro 16 M3",
+      "action": "Created",
+      "details": "Added item to Main House → Study Room → Work Desk",
+      "timestamp": "2026-10-22T05:34:04.850Z"
+    },
+    {
+      "id": "log_1792647085952_60d875",
+      "userId": "user_1792647085658_6354f8",
+      "itemId": "item_1792647085831_c6640b",
+      "itemName": "MacBook Pro 16 M3",
+      "action": "Deleted",
+      "details": "Removed item from vault",
+      "timestamp": "2026-10-22T05:31:25.952Z"
+    },
+    {
+      "id": "log_1792647085930_08e601",
+      "userId": "user_1792647085658_6354f8",
+      "itemId": "item_1792647085831_c6640b",
+      "itemName": "MacBook Pro 16 M3",
+      "action": "Updated",
+      "details": "Updated item details and metadata",
+      "timestamp": "2026-10-22T05:31:25.930Z"
+    },
+    {
+      "id": "log_1792647085853_31582e",
+      "userId": "user_1792647085658_6354f8",
+      "itemId": "item_1792647085853_8b9019",
+      "itemName": "MacBook Pro 16 M3",
+      "action": "Created",
+      "details": "Added item to Main Residence → Study Room",
+      "timestamp": "2026-10-22T05:31:25.853Z"
+    },
+    {
+      "id": "log_1792647085831_93845f",
+      "userId": "user_1792647085658_6354f8",
+      "itemId": "item_1792647085831_c6640b",
+      "itemName": "MacBook Pro 16 M3",
+      "action": "Created",
+      "details": "Added item to Main House → Study Room → Work Desk",
+      "timestamp": "2026-10-22T05:31:25.831Z"
+    },
+    {
+      "id": "log_1792646912544_3add73",
+      "userId": "user_1792646912284_941ff1",
+      "itemId": "item_1792646912443_9d1e6c",
+      "itemName": "MacBook Pro 16 M3",
+      "action": "Deleted",
+      "details": "Removed item from vault",
+      "timestamp": "2026-10-22T05:28:32.544Z"
+    },
+    {
+      "id": "log_1792646912469_e3fcd0",
+      "userId": "user_1792646912284_941ff1",
+      "itemId": "item_1792646912469_068a49",
+      "itemName": "MacBook Pro 16 M3",
+      "action": "Created",
+      "details": "Added item to Main Residence → Study Room",
+      "timestamp": "2026-10-22T05:28:32.469Z"
+    },
+    {
+      "id": "log_1792646912444_9a9371",
+      "userId": "user_1792646912284_941ff1",
+      "itemId": "item_1792646912443_9d1e6c",
+      "itemName": "MacBook Pro 16 M3",
+      "action": "Created",
+      "details": "Added item to Main House → Study Room → Work Desk",
+      "timestamp": "2026-10-22T05:28:32.444Z"
+    },
+    {
+      "id": "log_1792646674099_ed74ae",
+      "userId": "user_1792646673859_c455b0",
+      "itemId": "item_1792646674014_36e639",
+      "itemName": "MacBook Pro 16 M3",
+      "action": "Deleted",
+      "details": "Removed item from vault",
+      "timestamp": "2026-10-22T05:24:34.099Z"
+    },
+    {
+      "id": "log_1792646674035_82c805",
+      "userId": "user_1792646673859_c455b0",
+      "itemId": "item_1792646674034_069c67",
+      "itemName": "MacBook Pro 16 M3",
+      "action": "Created",
+      "details": "Added item to Main Residence → Study Room",
+      "timestamp": "2026-10-22T05:24:34.035Z"
+    },
+    {
+      "id": "log_1792646674014_98baf0",
+      "userId": "user_1792646673859_c455b0",
+      "itemId": "item_1792646674014_36e639",
+      "itemName": "MacBook Pro 16 M3",
+      "action": "Created",
+      "details": "Added item to Main House → Study Room → Work Desk",
+      "timestamp": "2026-10-22T05:24:34.014Z"
+    },
+    {
+      "id": "log_1792646633318_49957b",
+      "userId": "user_1792646632783_907590",
+      "itemId": "auth_security",
+      "itemName": "Account Security",
+      "action": "Updated",
+      "details": "Password was reset using secure recovery token",
+      "timestamp": "2026-10-22T05:23:53.318Z"
+    },
+    {
+      "id": "log_1792646573501_713921",
+      "userId": "user_1792646573038_d63cf1",
+      "itemId": "auth_security",
+      "itemName": "Account Security",
+      "action": "Updated",
+      "details": "Password was reset using secure recovery token",
+      "timestamp": "2026-10-22T05:22:53.501Z"
+    },
+    {
       "id": "log_1790663115034_qgg",
       "userId": "user_1790663113885",
       "itemId": "item_1790663114214_qy0",
@@ -591,5 +1877,42 @@
     }
   ],
   "notifications": [],
-  "passwordResetTokens": []
+  "passwordResetTokens": [
+    {
+      "id": "prt_1792646573355_ea96ac",
+      "userId": "user_1792646573038_d63cf1",
+      "tokenHash": "790da5f12ce8a23f1e122f6b4cfe8bd5227c13f372f6fb5821d62bbd9b9353fc",
+      "expiresAt": "2026-10-22T05:37:53.355Z",
+      "used": true,
+      "createdAt": "2026-10-22T05:22:53.355Z",
+      "usedAt": "2026-10-22T05:22:53.500Z"
+    },
+    {
+      "id": "prt_1792646633141_a6e250",
+      "userId": "user_1792646632783_907590",
+      "tokenHash": "8c1ac1b73687e4251e78cd3e0eaa6e32a4334a91c58092026efb47e5cd49508f",
+      "expiresAt": "2026-10-22T05:38:53.141Z",
+      "used": true,
+      "createdAt": "2026-10-22T05:23:53.141Z",
+      "usedAt": "2026-10-22T05:23:53.318Z"
+    },
+    {
+      "id": "prt_1792647359768_813b73",
+      "userId": "user_1792647358789_5fe0f6",
+      "tokenHash": "b0156923b1c71250b0d14dece3b89163f1bbfd9be8ef04053235dd2d57cfd902",
+      "expiresAt": "2026-10-22T05:50:59.768Z",
+      "used": true,
+      "createdAt": "2026-10-22T05:35:59.768Z",
+      "usedAt": "2026-10-22T05:35:59.914Z"
+    },
+    {
+      "id": "prt_1792647780916_2f7f71",
+      "userId": "user_1792647780165_e8a252",
+      "tokenHash": "ad3b377b72155f08eabe8aad9ff4b3b861db20404cd6834a4ead7e42d58e75fe",
+      "expiresAt": "2026-10-22T05:58:00.916Z",
+      "used": true,
+      "createdAt": "2026-10-22T05:43:00.916Z",
+      "usedAt": "2026-10-22T05:43:01.076Z"
+    }
+  ]
 }

@@ -1,12 +1,15 @@
 import React, { useState, useEffect } from 'react';
-import { MapPin, Home, ChevronRight, Layers } from 'lucide-react';
+import { MapPin, Home, ChevronRight, Layers, QrCode } from 'lucide-react';
 import { api } from '../services/api.js';
 import { LocationPickerMap } from '../components/common/LocationPickerMap.jsx';
+import { LocationQRModal } from '../components/common/LocationQRModal.jsx';
 
 export const LocationMapPage = ({ onViewItem, refreshTrigger = 0 }) => {
   const [items, setItems] = useState([]);
   const [selectedRoom, setSelectedRoom] = useState('All');
   const [loading, setLoading] = useState(true);
+  const [qrModalOpen, setQrModalOpen] = useState(false);
+  const [activeLocationForQR, setActiveLocationForQR] = useState(null);
 
   useEffect(() => {
     const fetchItems = async () => {
@@ -58,21 +61,39 @@ export const LocationMapPage = ({ onViewItem, refreshTrigger = 0 }) => {
           <p className="text-xs text-slate-500">Visual spatial directory of your home inventory</p>
         </div>
 
-        {/* Room Filter Pills */}
-        <div className="flex items-center gap-1.5 overflow-x-auto pb-1">
-          {roomsList.map(rm => (
-            <button
-              key={rm}
-              onClick={() => setSelectedRoom(rm)}
-              className={`px-3 py-1.5 rounded-xl text-xs font-bold transition-all whitespace-nowrap ${
-                selectedRoom === rm
-                  ? 'bg-indigo-600 text-white shadow-sm'
-                  : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
-              }`}
-            >
-              {rm} ({roomCounts[rm]})
-            </button>
-          ))}
+        <div className="flex flex-wrap items-center gap-2">
+          {/* Room Filter Pills */}
+          <div className="flex items-center gap-1.5 overflow-x-auto pb-1">
+            {roomsList.map(rm => (
+              <button
+                key={rm}
+                onClick={() => setSelectedRoom(rm)}
+                className={`px-3 py-1.5 rounded-xl text-xs font-bold transition-all whitespace-nowrap ${
+                  selectedRoom === rm
+                    ? 'bg-indigo-600 text-white shadow-sm'
+                    : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
+                }`}
+              >
+                {rm} ({roomCounts[rm]})
+              </button>
+            ))}
+          </div>
+
+          {/* QR Code Generator Trigger */}
+          <button
+            onClick={() => {
+              setActiveLocationForQR({
+                room: selectedRoom === 'All' ? 'Main Storage' : selectedRoom,
+                house: filteredItems[0]?.location?.house || 'Main Residence'
+              });
+              setQrModalOpen(true);
+            }}
+            className="px-3.5 py-1.5 rounded-xl border border-indigo-200 bg-indigo-50 text-indigo-700 font-bold text-xs hover:bg-indigo-100 transition-colors flex items-center gap-1.5 shrink-0"
+            title="Generate printable physical QR label for this storage location"
+          >
+            <QrCode className="w-4 h-4 text-indigo-600" />
+            <span>Generate QR Label</span>
+          </button>
         </div>
       </div>
 
@@ -104,9 +125,24 @@ export const LocationMapPage = ({ onViewItem, refreshTrigger = 0 }) => {
 
         {/* Storage Tree Listing */}
         <div className="p-5 rounded-3xl border border-slate-200 bg-white shadow-sm space-y-4">
-          <h3 className="text-xs font-bold uppercase tracking-wider text-slate-600 flex items-center gap-1.5">
-            <Home className="w-4 h-4 text-indigo-600" /> Room Hierarchy ({filteredItems.length} items)
-          </h3>
+          <div className="flex items-center justify-between">
+            <h3 className="text-xs font-bold uppercase tracking-wider text-slate-600 flex items-center gap-1.5">
+              <Home className="w-4 h-4 text-indigo-600" /> Room Hierarchy ({filteredItems.length} items)
+            </h3>
+            <button
+              onClick={() => {
+                setActiveLocationForQR({
+                  room: selectedRoom === 'All' ? 'Main Storage' : selectedRoom,
+                  house: filteredItems[0]?.location?.house || 'Main Residence'
+                });
+                setQrModalOpen(true);
+              }}
+              className="text-[11px] font-bold text-indigo-600 hover:text-indigo-800 flex items-center gap-1"
+            >
+              <QrCode className="w-3.5 h-3.5" />
+              <span>QR Tag</span>
+            </button>
+          </div>
 
           <div className="max-h-[420px] overflow-y-auto space-y-2 pr-1">
             {filteredItems.map(item => (
@@ -125,6 +161,18 @@ export const LocationMapPage = ({ onViewItem, refreshTrigger = 0 }) => {
                   <span className="font-semibold text-indigo-600">
                     {item.location?.room || 'Room'}
                   </span>
+                  {item.location?.cupboard && (
+                    <>
+                      <span>›</span>
+                      <span>{item.location.cupboard}</span>
+                    </>
+                  )}
+                  {item.location?.shelf && (
+                    <>
+                      <span>›</span>
+                      <span>{item.location.shelf}</span>
+                    </>
+                  )}
                   {item.location?.container && (
                     <>
                       <span>›</span>
@@ -137,6 +185,14 @@ export const LocationMapPage = ({ onViewItem, refreshTrigger = 0 }) => {
           </div>
         </div>
       </div>
+
+      {/* Physical Storage QR Tag Modal */}
+      <LocationQRModal
+        isOpen={qrModalOpen}
+        onClose={() => setQrModalOpen(false)}
+        locationData={activeLocationForQR}
+        items={filteredItems}
+      />
     </div>
   );
 };

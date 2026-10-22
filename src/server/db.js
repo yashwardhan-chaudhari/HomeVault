@@ -692,27 +692,6 @@ export class JSONDatabaseManager {
   // ITEMS MANAGEMENT WITH STRICT AUTHORIZATION
   // ==========================================
 
-  /**
-   * Check for duplicate items owned by the same user with similar name & location
-   */
-  checkForDuplicate(userId, itemData) {
-    if (!itemData || !itemData.name) return null;
-    const nameLower = itemData.name.trim().toLowerCase();
-    const room = itemData.location?.room || '';
-
-    const existing = this.data.items.find(i =>
-      !i.isDeleted &&
-      i.userId === userId &&
-      i.name.trim().toLowerCase() === nameLower &&
-      (room ? (i.location?.room || '').toLowerCase() === room.toLowerCase() : true)
-    );
-
-    if (existing) {
-      const locStr = [existing.location?.house, existing.location?.room, existing.location?.cupboard].filter(Boolean).join(' → ');
-      return `You already have an item named "${existing.name}" stored in ${locStr || 'this location'}.`;
-    }
-    return null;
-  }
 
   /**
    * Retrieve items strictly scoped to the requesting authenticated user
