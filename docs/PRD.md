@@ -1,3 +1,4 @@
+
 # Product Requirements Document (PRD)
 ## HomeVault - Smart Home Inventory Management System
 
@@ -96,31 +97,25 @@ To become the definitive digital vault for household inventory, empowering homeo
 
 ---
 
-#### 3.1.3 AI Auto-Detect (Computer Vision)
+#### 3.1.3 Photo & Attachment Management
 **Priority**: P1 (High)
 
 **User Stories**:
-- As a user, I want to upload an image and have the system automatically detect the item name, category, brand, and suggested attributes
-- As a user, I want to review and edit AI-detected information before saving
-- As a user, I want the system to learn from corrections to improve future detections
+- As a user, I want to upload photos of my household items, receipts, and user manuals
+- As a user, I want to preview attached photos and replace them when needed
+- As a user, I want clear file size validation and error messaging during upload
 
-**AI Capabilities**:
-- Item identification and naming
-- Category and subcategory classification
-- Brand detection from logos and text
-- Condition assessment
-- Color and material identification
-- Estimated value suggestion
-- Warranty period recommendation based on item type
+**Capabilities**:
+- Item photo gallery with thumbnail previews
+- Document and receipt attachments
+- File size validation and safe file type verification
+- Default placeholder images when no photo is attached
 
 **Acceptance Criteria**:
-- Image analysis completes within 3 seconds
-- Accuracy rate > 85% for common household items
-- User can accept all, modify, or reject AI suggestions
-- System supports JPEG, PNG, WebP image formats
-- Maximum image size 10MB
+- Upload supports standard image formats (JPEG, PNG, WebP)
+- File size limit enforced (maximum 10MB per upload)
+- User can view full-size photos in the item detail view
 
-**Technology**: Google Gemini Vision API
 
 ---
 
@@ -361,7 +356,7 @@ House → Floor → Room → Cupboard → Shelf → Drawer → Container → Exa
 4. System validates and creates account
 5. User redirected to empty dashboard with welcome message
 6. Tutorial tooltips guide user to add first item
-7. User adds first item via "Add Item" button or AI Auto-Detect
+7. User adds first item via "+ Add Item" button
 8. Dashboard updates with first item displayed
 
 #### 4.1.2 Add Item Manually
@@ -374,15 +369,13 @@ House → Floor → Room → Cupboard → Shelf → Drawer → Container → Exa
 7. System validates, creates item, shows success toast
 8. Modal closes, item appears in inventory
 
-#### 4.1.3 Add Item with AI Auto-Detect
-1. User clicks "AI Auto-Detect" button
-2. Modal opens with image upload interface
-3. User uploads image or takes photo
-4. System analyzes image with Gemini Vision API
-5. AI-detected fields populate form (name, category, brand, etc.)
-6. User reviews and edits detected information
-7. User clicks "Save to Vault"
-8. Item created with AI-detected data
+#### 4.1.3 Attach Item Photo and Specify Location Hierarchy
+1. In the Item Form, user clicks upload to attach an item photo
+2. Image preview renders immediately with file size validation
+3. User selects or types the hierarchical location (e.g. Home → Bedroom → Wardrobe → Top Shelf)
+4. User enters warranty dates and purchase value
+5. User clicks "Save to Vault"
+6. Item is stored securely in the inventory
 
 #### 4.1.4 Search and Filter Items
 1. User types in search bar in navbar
@@ -453,9 +446,8 @@ House → Floor → Room → Cupboard → Shelf → Drawer → Container → Exa
 #### Backend
 - **Runtime**: Node.js
 - **Framework**: Express.js
-- **Database**: JSON file-based storage (development), PostgreSQL/MongoDB (production)
+- **Database**: JSON file-based storage (development), PostgreSQL/SQLite (production)
 - **Authentication**: JWT (jsonwebtoken) + bcryptjs
-- **AI Service**: Google Gemini API (@google/genai)
 
 #### DevOps
 - **Hosting**: Vercel, Netlify, or AWS
@@ -489,9 +481,8 @@ DELETE /api/items/:id               - Delete item
 PATCH  /api/items/:id/favorite      - Toggle favorite status
 ```
 
-#### AI & Suggestions Endpoints
+#### Suggestions Endpoints
 ```
-POST   /api/autodetect              - Analyze image with AI
 GET    /api/suggestions             - Get autocomplete suggestions
 ```
 
@@ -616,10 +607,9 @@ PATCH  /api/notifications/read-all  - Mark all as read
 
 ### Assumptions
 - Users have reliable internet connection
-- Users have devices with cameras for image capture
-- Users comfortable with cloud-based storage
-- Google Gemini API remains free or affordable for image analysis
-- Users willing to manually input initial inventory data
+- Users have devices with cameras or file storage for image uploads
+- Users comfortable with web-based storage
+- Users willing to input initial inventory data
 
 ---
 
@@ -629,7 +619,7 @@ PATCH  /api/notifications/read-all  - Mark all as read
 - [ ] User registration and authentication functional
 - [ ] CRUD operations for items working
 - [ ] Search and filter functional
-- [ ] AI Auto-Detect operational with >80% accuracy
+- [ ] Hierarchical location management and interactive map working
 - [ ] Dashboard displays real-time statistics
 - [ ] Interactive map shows item locations
 - [ ] Mobile responsive on all pages

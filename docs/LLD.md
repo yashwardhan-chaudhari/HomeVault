@@ -487,39 +487,7 @@ Authorization: Bearer <token>
 
 ---
 
-### 3.3 AI & Suggestions API
-
-#### POST /api/autodetect
-
-**Description**: Analyze image with Google Gemini Vision API
-
-**Request Body**:
-```typescript
-{
-  imageBase64: string;      // Required, base64-encoded image data
-  mimeType?: string;        // Optional, default: 'image/jpeg'
-}
-```
-
-**Response (200 OK)**:
-```typescript
-{
-  name: string;
-  category: string;
-  subcategory?: string;
-  brand?: string;
-  description?: string;
-  condition?: string;
-  tags?: string[];
-  estimatedPrice?: number;
-}
-```
-
-**Error Responses**:
-- `400 Bad Request`: Missing imageBase64
-- `500 Internal Server Error`: AI API error or server error
-
----
+### 3.3 Suggestions API
 
 #### GET /api/suggestions
 
@@ -1437,7 +1405,7 @@ const isValidDate = (dateString) => {
 - Event handlers prefix with `handle`: `handleSubmit`, `handleClick`
 
 **Components**:
-- Use PascalCase: `ItemCard`, `DashboardPage`, `AutoDetectModal`
+- Use PascalCase: `ItemCard`, `DashboardPage`, `ItemDetailModal`
 - Suffix with type if not obvious: `ItemFormModal`, `ConfirmModal`
 
 **Constants**:

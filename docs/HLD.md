@@ -66,11 +66,11 @@ This HLD covers:
 ## 2. System Overview
 
 ### 2.1 System Purpose
-HomeVault enables users to digitally catalog, organize, track, and locate household items through a web-based interface with AI-powered features, interactive maps, and comprehensive analytics.
+HomeVault enables users to digitally catalog, organize, track, and locate household items through a web-based interface with hierarchical location tracking, interactive maps, and comprehensive analytics.
 
 ### 2.2 Key Features
 1. **Item Management**: CRUD operations for household items with rich metadata
-2. **AI Auto-Detection**: Computer vision-based item recognition and classification
+2. **Hierarchical Location Tracking**: Multi-tier room, storage, and container hierarchy mapping
 3. **Location Mapping**: Interactive maps showing physical item locations
 4. **Analytics Dashboard**: Visual insights into inventory distribution and trends
 5. **Search & Filter**: Advanced search with multiple filter criteria
@@ -110,14 +110,14 @@ HomeVault enables users to digitally catalog, organize, track, and locate househ
 │         │                      │         │                │
 │         └──────────┬───────────┘         │                │
 │                    │                      │                │
-│         ┌──────────┼──────────┐          │                │
-│         │          │          │          │                │
-│         ▼          ▼          ▼          │                │
-│  ┌──────────┐ ┌────────┐ ┌─────────┐   │                │
-│  │   JSON   │ │ Gemini │ │  File   │   │                │
-│  │ Database │ │   AI   │ │ Storage │   │                │
-│  │          │ │  API   │ │         │   │                │
-│  └──────────┘ └────────┘ └─────────┘   │                │
+│         ┌──────────┴──────────┐          │                │
+│         │                     │          │                │
+│         ▼                     ▼          │                │
+│  ┌──────────┐            ┌─────────┐     │                │
+│  │   JSON   │            │  File   │     │                │
+│  │ Database │            │ Storage │     │                │
+│  │          │            │         │     │                │
+│  └──────────┘            └─────────┘     │                │
 │                                          │                │
 └──────────────────────────────────────────┘                │
 ```
@@ -163,7 +163,7 @@ HomeVault follows a **Client-Server Architecture** with a **REST API** backend a
 │  ┌────────────────────────────────────────────────────────┐ │
 │  │  Route Handlers (Controllers)                          │ │
 │  │  Service Layer (Business Rules, Validation)            │ │
-│  │  AI Integration (Gemini Vision API)                    │ │
+│  │  Location Hierarchy & Analytics Services               │ │
 │  └────────────────────────────────────────────────────────┘ │
 └─────────────────────────────────────────────────────────────┘
                             │
@@ -267,7 +267,6 @@ App
 └── Modals
     ├── ItemFormModal
     ├── ItemDetailModal
-    ├── AutoDetectModal
     └── ConfirmModal
 ```
 
@@ -285,7 +284,7 @@ App
 - **Purpose**: Top navigation bar with search and quick actions
 - **Features**:
   - Search bar with real-time filtering
-  - Add item and AI auto-detect buttons
+  - Add item quick action button
   - User profile dropdown
   - Theme toggle
   - Notifications badge
@@ -316,14 +315,13 @@ App
   - Favorite toggle
   - Document downloads
 
-**6. AutoDetectModal**
-- **Purpose**: AI-powered item detection interface
+**6. LocationHierarchyViewer**
+- **Purpose**: Hierarchical room and storage location explorer
 - **Features**:
-  - Image upload/capture
-  - AI analysis with loading state
-  - Detected fields display
-  - Edit detected information
-  - Save to vault
+  - Multi-tier tree navigation (House → Room → Cupboard → Shelf → Drawer)
+  - Item counts per storage unit
+  - Quick filtering by room or storage location
+  - Breadcrumb location indicators
 
 **7. LocationMapPage**
 - **Purpose**: Interactive map showing item locations
@@ -377,9 +375,6 @@ server.js (Entry Point)
     │   ├── Dashboard Stats
     │   ├── Analytics Data
     │   └── Aggregation Pipeline
-    │
-    └── Gemini Service (geminiService.js)
-        └── analyzeItemImage()
 ```
 
 #### 4.2.2 Database Manager
@@ -438,48 +433,19 @@ markAllNotificationsRead(userId)
 
 **Flow**:
 ```javascript
-1. Extract JWT token from Authorization header
-2. If no token → Set userId to default 'user_demo_001' (demo mode)
-3. If token present → Verify with JWT_SECRET
-4. If valid → Decode userId and attach to req.userId
-5. If invalid → Fallback to demo user
-6. Call next() to continue to route handler
+1. Extract JWT token from Authorization header (`Bearer <token>`)
+2. If token is missing → Return 401 Unauthorized (`{ error: 'Authentication required' }`)
+3. Verify token signature and expiration with JWT_SECRET
+4. If invalid or expired → Return 401 Unauthorized (`{ error: 'Invalid or expired token' }`)
+5. Attach verified decoded user to req.user / req.userId
+6. Call next() to allow access to protected route
 ```
 
 **Security Features**:
-- Bearer token format
-- JWT expiry (7 days)
-- Demo mode for unauthenticated users
-- Graceful degradation (no hard errors)
-
-#### 4.2.4 Gemini AI Service
-
-**File**: `geminiService.js`
-
-**Function**: `analyzeItemImage(imageBase64, mimeType)`
-
-**Flow**:
-```javascript
-1. Receive base64-encoded image
-2. Initialize Gemini Vision API client
-3. Construct prompt for item detection
-4. Send image to Gemini API
-5. Parse AI response (JSON format)
-6. Extract: name, category, subcategory, brand, description, condition, tags
-7. Return structured item data
-```
-
-**AI Prompt Example**:
-```
-Analyze this image of a household item and provide the following information in JSON format:
-- name: item name
-- category: general category (e.g., Electronics, Furniture, Clothing)
-- subcategory: specific type
-- brand: manufacturer or brand name if visible
-- description: brief description
-- condition: estimated condition (New, Like New, Good, Fair, Poor)
-- tags: array of relevant tags
-```
+- Bearer token format validation
+- Strict rejection of missing/expired tokens (no unauthenticated fallback)
+- User scoped data isolation across all endpoints
+- Enforced cryptographic secret validation
 
 ---
 
@@ -600,71 +566,47 @@ Analyze this image of a household item and provide the following information in 
 └────────────────────┘
 ```
 
-### 5.3 AI Auto-Detect Flow
+### 5.3 Location Hierarchy & Photo Upload Flow
 
 ```
 ┌───────────┐
 │   User    │
 └─────┬─────┘
       │
-      │ 1. Click "AI Auto-Detect"
+      │ 1. Open Item Form Modal
       ▼
 ┌────────────────────┐
-│ AutoDetectModal    │
-│ opens              │
+│ ItemFormModal      │
+│ displays inputs    │
 └─────┬──────────────┘
       │
-      │ 2. User uploads image or takes photo
+      │ 2. User uploads item photo (validated size/type)
       ▼
 ┌────────────────────┐
-│ Convert image to   │
-│ base64 string      │
+│ Instant image      │
+│ preview rendered   │
 └─────┬──────────────┘
       │
-      │ 3. POST /api/autodetect
-      │    Body: { imageBase64, mimeType }
+      │ 3. Select / input location hierarchy
+      │    (e.g. Master Bedroom → Wardrobe → Shelf 2)
       ▼
 ┌────────────────────┐
-│ Server: autodetect │
-│ route handler      │
+│ User enters item   │
+│ metadata & warranty│
 └─────┬──────────────┘
       │
-      │ 4. analyzeItemImage(imageBase64, mimeType)
+      │ 4. Click "Save to Vault"
       ▼
 ┌────────────────────┐
-│ Gemini Vision API  │
-│ - Send image       │
-│ - Send prompt      │
+│ POST /api/items    │
+│ with Bearer token  │
 └─────┬──────────────┘
       │
-      │ 5. AI processes image and returns JSON
+      │ 5. Server validates inputs & persists item
       ▼
 ┌────────────────────┐
-│ Parse AI response  │
-│ Extract: name,     │
-│ category, brand,   │
-│ description, tags  │
-└─────┬──────────────┘
-      │
-      │ 6. Return { name, category, brand, ... }
-      ▼
-┌────────────────────┐
-│ Frontend: Populate │
-│ form with AI data  │
-└─────┬──────────────┘
-      │
-      │ 7. User reviews and edits if needed
-      ▼
-┌────────────────────┐
-│ User clicks "Save  │
-│ to Vault"          │
-└─────┬──────────────┘
-      │
-      │ 8. POST /api/items (standard item creation)
-      ▼
-┌────────────────────┐
-│ Item created with  │
-│ AI-detected data   │
+│ Item saved to user │
+│ vault & audit log  │
 └────────────────────┘
 ```
 
@@ -736,7 +678,6 @@ Analyze this image of a household item and provide the following information in 
 | **Database** | JSON File | - | File-based database (dev) |
 | **Authentication** | jsonwebtoken | 9.0.3 | JWT token generation |
 | **Password** | bcryptjs | 3.0.3 | Password hashing |
-| **AI** | Google Gemini | 2.4.0 | Computer vision API |
 | **Environment** | dotenv | 17.2.3 | Environment variables |
 | **Dev Server** | tsx | 4.21.0 | TypeScript execution |
 
@@ -982,15 +923,6 @@ Deploy to Production
 
 ### 10.1 External APIs
 
-#### Google Gemini Vision API
-- **Purpose**: AI-powered image analysis for item detection
-- **Endpoint**: `https://generativelanguage.googleapis.com/v1/models/gemini-2.0-flash-exp`
-- **Authentication**: API Key (stored in environment variables)
-- **Request**: Base64-encoded image + text prompt
-- **Response**: JSON with detected item attributes
-- **Rate Limits**: TBD (check Gemini API documentation)
-- **Error Handling**: Fallback to manual entry if API fails
-
 #### Leaflet Tile Servers (Maps)
 - **Purpose**: Map tiles for interactive location mapping
 - **Endpoint**: `https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png`
@@ -1107,7 +1039,6 @@ Deploy to Production
 | POST | /api/items | Create item |
 | PUT | /api/items/:id | Update item |
 | DELETE | /api/items/:id | Delete item |
-| POST | /api/autodetect | AI image analysis |
 | GET | /api/dashboard/stats | Dashboard metrics |
 | GET | /api/analytics | Analytics data |
 | GET | /api/activity-logs | Activity history |

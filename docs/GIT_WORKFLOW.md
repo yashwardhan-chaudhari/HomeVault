@@ -3,7 +3,7 @@
 ## 1. Branch Strategy
 - `main`: Production release branch. All commits here are tagged with semantic version numbers (e.g. `v1.2.0`).
 - `develop`: Primary integration branch. Features and hotfixes are merged here for automated verification.
-- `feature/*`: Short-lived branches created for isolated feature development (e.g. `feature/item-vision-scan`).
+- `feature/*`: Short-lived branches created for isolated feature development (e.g. `feature/location-hierarchy`).
 - `hotfix/*`: Direct patches branched from `main` to address critical production issues.
 
 ## 2. Commit Message Conventions (Conventional Commits)
